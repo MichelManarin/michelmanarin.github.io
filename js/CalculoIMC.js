@@ -5,6 +5,8 @@ const LINKGIT = "";
 
 var count = 0;
 
+initializationPage();
+
 function initializationPage(){
 
 	/*firebase.auth().onAuthStateChanged(function (user) {
