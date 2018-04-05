@@ -96,8 +96,8 @@ function adicionarPaciente() {
 	}
 	catch(err) {
 		avisoTop.style.cssText = "text-align: left; ";
-		var titulo = avisoTop.getElementsByTagName("h2");
-		titulo.textContent  = "teste";
+		document.getElementById("tituloaviso").textContent = "Aviso";
+		document.getElementById("corpoaviso").innerText  = "Não foi possível incluir o paciente. " + err;
 
 		return;
 	}
