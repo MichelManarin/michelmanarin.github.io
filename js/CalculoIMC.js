@@ -83,7 +83,7 @@ function adicionarPaciente() {
   											}
 										);
 
-	var alturaElevada = (parseFloat(campoaltura.value) * parseFloat(campoaltura.value));
+	var alturaElevada = (parseFloat(campoAltura.value) * parseFloat(campoAltura.value));
 	var imc = parseFloat(campoPeso.value) / alturaElevada;
 
 	var columnIMC = document.createElement("td");
