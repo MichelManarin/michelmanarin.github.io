@@ -49,6 +49,16 @@ function clearGrid(){
 	}
 } 
 
+
+
+function deleteRow(row) {
+
+  var i = row.parentNode.parentNode.rowIndex;
+  var table = document.getElementById("table-data");
+  table.deleteRow(i-1);
+}
+
+
 function adicionarPaciente() {
 
 	count = count + 1;
@@ -108,6 +118,22 @@ function adicionarPaciente() {
 	var columnAltura = document.createElement("td");
 	columnAltura.innerText = altura;
 
+	var columnDelete = document.createElement("td");
+	var iElement = document.createElement("i");
+
+	iElement.className += 'fa fa-trash-o iconremove';	
+	columnDelete.appendChild(iElement);
+
+	iElement.addEventListener("click",
+  										function() {
+    										deleteRow(this);
+  											}
+										);
+
+	//<i class="fa fa-trash-o iconremove"></i>
+
+
+
 
 	var alturaElevada = (parseFloat(campoaltura.value) * parseFloat(campoaltura.value));
 	var imc = parseFloat(campoPeso.value) / alturaElevada;
@@ -120,6 +146,7 @@ function adicionarPaciente() {
 	rowgrid.appendChild(columnPeso);
 	rowgrid.appendChild(columnAltura);
 	rowgrid.appendChild(columnIMC);
+	rowgrid.appendChild(columnDelete);
 
 	table.appendChild(rowgrid);
 
