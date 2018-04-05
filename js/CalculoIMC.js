@@ -1,7 +1,6 @@
-const DOCUMENT_PAGE    = "JS - CálculoIMC";
-const TITLE_PAGE       = "CÁLCULO DE IMC";
 const DESCRIPTION_PAGE = "Criação de grid de cálculo IMC, permitindo inserção de pacientes e visualização do índice de massa corporal";
-const LINKGIT = "";
+const DOCUMENT_PAGE = "JS - CálculoIMC";
+const TITLE_PAGE = "CÁLCULO DE IMC";
 
 var count = 0;
 
@@ -9,47 +8,10 @@ initializationPage();
 
 function initializationPage(){
 
-	/*firebase.auth().onAuthStateChanged(function (user) {
-        loggedUser = user;
-        console.log('firebase.auth.onAuthStateChanged > user', user);
-        if (user == null) {
-            $('#div-must-auth').show(400);
-        } else {
-            $('#div-must-auth').hide(200);
-            loggedIn(user);
-        }
-    });
-
-
-	 var provider = new firebase.auth.GithubAuthProvider();
-        provider.addScope('user');
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-            console.log('firebase.auth.signInWithPopup > user', result.user);
-            loggedIn(result.user);
-        }).catch(function (error) {
-            console.log('error', error);
-            alert(error.message);
-        });*/
-
-	
-
 	document.title = DOCUMENT_PAGE;
-
 	document.getElementById("TITLE-PAGE").innerText = TITLE_PAGE;
 	document.getElementById("DESCRIPTION-PAGE").innerText = DESCRIPTION_PAGE;
-	 
 }
-
-function clearGrid(){
-
-	var table = document.getElementById("table-data");
-	
-	while (table.firstChild) {
-    	table.removeChild(table.firstChild);
-	}
-} 
-
-
 
 function deleteRow(row) {
 
@@ -67,20 +29,14 @@ function adicionarPaciente() {
 	var campoNome = document.getElementById("camponome");
 	var campoPeso = document.getElementById("campopeso");
 	var campoAltura = document.getElementById("campoaltura");
-	
-	//Pessoa = new Pessoa(campoNome.value,campoPeso.value,campoAltura.value);
-
 	var table = document.getElementById("table-data");
-
- 	
-	// Create row of grid
-	var rowgrid  = document.createElement("tr");
+	var rowgrid = document.createElement("tr");
 
 	var nome   = campoNome.value;
 	var peso   = campoPeso.value;
 	var altura = campoAltura.value;
 
-
+	// Validações
 	try {
     	if (peso <= 0){
   			throw "Peso deve ser maior que zero.";
@@ -95,17 +51,14 @@ function adicionarPaciente() {
   		}
 	}
 	catch(err) {
+		// Lançamento de aviso visual na tela
 		avisoTop.style.cssText = "text-align: left; ";
 		document.getElementById("tituloaviso").textContent = "Aviso";
 		document.getElementById("corpoaviso").innerText  = "Não foi possível incluir o paciente. " + err;
-
 		return;
 	}
 
-	
-
-
-	// Create columns of row
+	// Criando novos elementos da grid
 	var columnID = document.createElement("td");
 	columnID.innerText = count;
 
@@ -130,11 +83,6 @@ function adicionarPaciente() {
   											}
 										);
 
-	//<i class="fa fa-trash-o iconremove"></i>
-
-
-
-
 	var alturaElevada = (parseFloat(campoaltura.value) * parseFloat(campoaltura.value));
 	var imc = parseFloat(campoPeso.value) / alturaElevada;
 
@@ -153,35 +101,9 @@ function adicionarPaciente() {
 	document.getElementById("formulario").reset();
 
 	return; 
-
 }
 
 function removerAviso(){ 
 	var avisoTop = document.getElementById("avisoTop");
 	avisoTop.style.cssText = "text-align: left; display: none; ";
-
-}
-
-class Pessoa {
-  
-  constructor(nome, peso, altura) {
-
-  	
-
-    this.nome = nome;
-    this.peso = peso;
-    this.altura = altura;
-
-   
-
-	//alert(Math.round(this.peso/alturaElevada));
-
-    //this.imc = 	Math.round(this.peso/alturaElevada);
-  }
-
-  calcIMC() {
-    return this.nome * this.altura;
-  }
-  	
-
 }
