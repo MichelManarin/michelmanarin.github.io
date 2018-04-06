@@ -24,12 +24,10 @@
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
 
     <link href="css/main.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+
+    <style type="text/css">
+        .container-fluid { padding-top: 20px; }
+    </style>
 </head>
 
 <body class="fix-header">
@@ -62,7 +60,7 @@
                 </div>
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
-                    <li><a>Atividades</a></li>
+                    <li><a href="index.html">Atividades</a></li>
                     <li><a>Resumo</a></li>
                 </ul>
             </div>
@@ -83,86 +81,40 @@
         <!-- ============================================================== -->
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
-                    <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-                        <h4 class="page-title" id="TITLE-PAGE">Cálculo de IMC</h4> 
-                        <h5 id="DESCRIPTION-PAGE">Criação de grid de cálculo IMC, permitindo inserção de pacientes e visualização do índice de massa corporal</h5>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-4 col-xs-12">
-                        <a href="https://github.com/MichelManarin/michelmanarin.github.io/blob/master/js/CalculoIMC.js" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Acessar GIT
-
-                        </a>
-                        <ol class="breadcrumb">
-                            <li><a href="#">Ínicio</a></li>
-                            <li class="active">Cálculo de IMC</li>
-                        </ol>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /row -->
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Pacientes</h3>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
-                                            <th>Peso</th>
-                                            <th>Altura</th>
-                                            <th>IMC</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="table-data">
-                                        <!--<tr>
-                                             <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Prohaska</td>
-                                            <td>@Genelia</td>
-                                            <td>admin</td>
-                                            <td>
-                                                <i class="fa fa-trash-o iconremove"></i>
-                                            </td>
-                                        </tr>
-                                        -->
-                                    </tbody>
-                                </table>
-                            </div>
+                            <section>
+                                <h3 class="box-title">Atividades</h3>
+                                <h4 class="sub-title">JavaScript</h4>
+                                <div class="icon-list-demo clearfix">
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <a href="AtividadeJSIMC.html">
+                                            <i class="fa fa-angle-right"></i> 
+                                            Cálculo de IMC
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <a href="index.html">
+                                            <i class="fa fa-spin fa-spinner"></i> 
+                                            Kanban - [Em construção]
+                                        </a>
+                                    </div>
+                                </div>
+                                <h4 class="sub-title">ASP.NET CORE + C#</h4>
+                                <div class="icon-list-demo clearfix">
+                                        <div class="col-sm-6 col-md-4 col-lg-3">
+                                            <a href="index.html">
+                                                <i class="fa fa-spin fa-spinner"></i> 
+                                                [Em construção]
+                                            </a>
+                                        </div>
+                                 </div>
+                            </section>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12 col-xs-12">
-                            <div class="white-box">
-                                <form id="formulario" class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Nome</label>
-                                        <div class="col-md-12">
-                                            <input  required id="camponome" type="text" placeholder="Nome do paciente" class="form-control form-control-line"> </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Peso</label>
-                                        <div class="col-md-12">
-                                            <input  required id="campopeso" type="number" step="0.01" placeholder="Peso do paciente" class="form-control form-control-line" name="example-email" id="example-email"> </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Altura</label>
-                                        <div class="col-md-12">
-                                            <input  required id="campoaltura" type="number" step="0.01" placeholder="Altura do paciente" class="form-control form-control-line" name="example-email" id="example-email"> </div>
-                                    </div>                               
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <button type="button" onclick="adicionarPaciente()" class="btn btn-success">Inserir paciente</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- /.row -->
             </div>
