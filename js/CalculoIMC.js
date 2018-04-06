@@ -26,15 +26,15 @@ function adicionarPaciente() {
 	count = count + 1;
 	// Query.Selector("#DIV")
 
-	var form = document.getElementById("formulario"); 
-	var avisoTop = document.getElementById("avisoTop");
+	var form = document.querySelector("#formulario"); 
+	var avisoTop = document.querySelector("#avisoTop");
 	
 
 	var nome = form.nome.value;
 	var peso = form.peso.value;
 	var altura = form.altura.value;
 
-	var table = document.getElementById("table-data");
+	var table = document.querySelector("#table-data");
 	var rowgrid = document.createElement("tr");
 
 	
