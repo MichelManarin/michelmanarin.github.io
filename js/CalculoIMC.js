@@ -24,18 +24,20 @@ function deleteRow(row) {
 function adicionarPaciente() {
 
 	count = count + 1;
+	// Query.Selector("#DIV")
 
+	var form = document.getElementById("formulario"); 
 	var avisoTop = document.getElementById("avisoTop");
-	var campoNome = document.getElementById("camponome");
-	var campoPeso = document.getElementById("campopeso");
-	var campoAltura = document.getElementById("campoaltura");
+	
+
+	var nome = form.nome.value;
+	var peso = form.peso.value;
+	var altura = form.altura.value;
+
 	var table = document.getElementById("table-data");
 	var rowgrid = document.createElement("tr");
 
-	var nome   = campoNome.value;
-	var peso   = campoPeso.value;
-	var altura = campoAltura.value;
-
+	
 	// Validações
 	try {
     	if (peso <= 0){
@@ -83,8 +85,8 @@ function adicionarPaciente() {
   											}
 										);
 
-	var alturaElevada = (parseFloat(campoAltura.value) * parseFloat(campoAltura.value));
-	var imc = parseFloat(campoPeso.value) / alturaElevada;
+	var alturaElevada = (parseFloat(altura) * parseFloat(altura));
+	var imc = parseFloat(peso) / alturaElevada;
 
 	var columnIMC = document.createElement("td");
 	columnIMC.innerText = imc.toFixed(2);
