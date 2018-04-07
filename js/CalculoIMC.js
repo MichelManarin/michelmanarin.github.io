@@ -20,76 +20,74 @@ function deleteRow(row) {
   table.deleteRow(i-1);
 }
 
+function getDataForm(form){
 
-function adicionarPaciente() {
+	var paciente = {
+		nome:   form.nome.value,
+		peso:   form.peso.value,
+		altura: form.altura.value,
+		imc:    calculateIMC(parseFloat(form.altura.value), parseFloat(form.peso.value))
+	}
 
-	count = count + 1;
-	// Query.Selector("#DIV")
+	return paciente;	
+}
 
-	var form = document.querySelector("#formulario"); 
-	var avisoTop = document.querySelector("#avisoTop");
+function calculateIMC(altura,peso){
 	
+    return peso / (altura * altura);
+}
 
-	var nome = form.nome.value;
-	var peso = form.peso.value;
-	var altura = form.altura.value;
-
-	var table = document.querySelector("#table-data");
-	var rowgrid = document.createElement("tr");
-
+function pacienteRules(paciente){
 	
-	// Validações
 	try {
-    	if (peso <= 0){
+    	if (paciente.peso <= 0){
   			throw "Peso deve ser maior que zero.";
   		}
 
-  		if (altura <= 0){
+  		if (paciente.altura <= 0){
   			throw "Altura deve ser maior que zero.";
   		}
 
-  		if (nome.length == 0){
+  		if (paciente.nome.length == 0){
   			throw "O nome deve ser informado.";
   		}
 	}
 	catch(err) {
-		// Lançamento de aviso visual na tela
-		avisoTop.style.cssText = "text-align: left; ";
+		avisoTop.style.cssText = "text-align: left;";
 		document.getElementById("tituloaviso").textContent = "Aviso";
 		document.getElementById("corpoaviso").innerText  = "Não foi possível incluir o paciente. " + err;
-		return;
+		return false;
 	}
+	return true;
 
-	// Criando novos elementos da grid
+}
+
+function resetForm(form){
+	document.getElementById("formulario").reset();
+}
+
+function buildRowTable(paciente,count){
+	
+	var rowgrid = document.createElement("tr");
+
 	var columnID = document.createElement("td");
-	columnID.innerText = count;
-
 	var columnNome = document.createElement("td");
-	columnNome.innerText = nome;
-
 	var columnPeso = document.createElement("td");
-	columnPeso.innerText = peso;
-
 	var columnAltura = document.createElement("td");
-	columnAltura.innerText = altura;
-
 	var columnDelete = document.createElement("td");
-	var iElement = document.createElement("i");
-
-	iElement.className += 'fa fa-trash-o iconremove';	
-	columnDelete.appendChild(iElement);
-
-	iElement.addEventListener("click",
-  										function() {
-    										deleteRow(this);
-  											}
-										);
-
-	var alturaElevada = (parseFloat(altura) * parseFloat(altura));
-	var imc = parseFloat(peso) / alturaElevada;
-
 	var columnIMC = document.createElement("td");
-	columnIMC.innerText = imc.toFixed(2);
+
+	columnID.innerText = count;
+	columnNome.innerText = paciente.nome;
+	columnPeso.innerText = paciente.peso;
+	columnAltura.innerText = paciente.altura;
+	columnIMC.innerText = paciente.imc.toFixed(2);
+
+	var i = document.createElement("i");
+	i.className += 'fa fa-trash-o iconremove';	
+	i.addEventListener("click", function() {deleteRow(this);});
+	
+	columnDelete.appendChild(i);
 
 	rowgrid.appendChild(columnID);
 	rowgrid.appendChild(columnNome);
@@ -97,12 +95,33 @@ function adicionarPaciente() {
 	rowgrid.appendChild(columnAltura);
 	rowgrid.appendChild(columnIMC);
 	rowgrid.appendChild(columnDelete);
+	
+	return rowgrid;
+}
 
-	table.appendChild(rowgrid);
+function adicionarPaciente() {
 
-	document.getElementById("formulario").reset();
+	try {
+		count = count + 1;
+		
+		var avisoTop = document.querySelector("#avisoTop");
+		var form = document.querySelector("#formulario"); 
+		var table = document.querySelector("#table-data");
 
-	return; 
+		var paciente = getDataForm(form);
+
+		if (!pacienteRules(paciente)){
+			return;
+		}
+
+		table.appendChild(buildRowTable(paciente,count));
+		resetForm();
+	}
+	catch(err) {
+		avisoTop.style.cssText = "text-align: left;";
+		document.getElementById("tituloaviso").textContent = "Erro ao adicionar o paciente";
+		document.getElementById("corpoaviso").innerText  = "Mensagem do erro.: " + err;
+	}
 }
 
 function removerAviso(){ 
