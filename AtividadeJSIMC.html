@@ -135,7 +135,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
                             <div class="white-box">
                                 <form id="formulario" class="form-horizontal form-material">
                                     <div class="form-group">
@@ -161,7 +161,16 @@
                                 </form>
                             </div>
                         </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12">
+                                <div class="white-box">
+                                    <h3 class="box-title">Realizar integração</h3>
+                                    <input disabled style="cursor:default;" src="https://api-pacientes.herokuapp.com/pacientes" type="text" placeholder="https://api-pacientes.herokuapp.com/pacientes" class="form-control form-control-line"> 
+                                    <button style="margin-top:15px;" type="button" onclick="" class="btn btn-success">Integrar</button>
+                                </div>
+                            </div>
+                        </div>   
                     </div>
+                                     
                 </div>
 
                 <!-- /.row -->
@@ -207,7 +216,7 @@
     		<span class="jq-toast-loader jq-toast-loaded" style="-webkit-transition: width 3.1s ease-in; -o-transition: width 3.1s ease-in;  transition: width 3.1s ease-in;                       background-color: #fff;">
     		
     		</span>
-    		<span class="close-jq-toast-single" onclick="removerAviso()" >×</span>
+    		<span class="close-jq-toast-single" onclick="removeValidation()" >×</span>
     		<h2 name= "title" class="jq-toast-heading" id="tituloaviso"></h2>
     	    <div id="corpoaviso">
                <b></b>

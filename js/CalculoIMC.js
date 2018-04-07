@@ -14,7 +14,7 @@ function initializationPage(){
 }
 
 function deleteRow(row) {
-
+ // event.target?
   var i = row.parentNode.parentNode.rowIndex;
   var table = document.getElementById("table-data");
   table.deleteRow(i-1);
