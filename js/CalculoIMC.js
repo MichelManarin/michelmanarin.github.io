@@ -125,7 +125,46 @@ function addPaciente() {
 	}
 }
 
+function addPacienteIntegration(arrayPacientes) {
+
+	try {
+		var table = document.querySelector("#table-data");
+
+		arrayPacientes.forEach( function(paciente){
+			count = count + 1;
+
+			if (!pacienteRules(paciente)){
+				return;
+			}
+
+			table.appendChild(buildRowTable(paciente,count));	
+		});
+	}
+	catch(err) {
+		showValidation("Erro ao adicionar o paciente.", err.message);
+	}
+}
+
 function removeValidation(){ 
 	var avisoTop = document.getElementById("avisoTop");
 	avisoTop.style.cssText = "text-align: left; display: none; ";
+}
+
+function integration(){
+	
+	var xhr = new XMLHttpRequest();
+
+	xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
+
+	xhr.addEventListener("load", function(){
+
+		if (xhr.status == 200){
+			var objetos = JSON.parse(xhr.responseText);
+			addPacienteIntegration(objetos);
+		} else {
+			showValidation("Não foi possível realizar a integração.","O sistema terceiro não respondeu corretamente");
+		}
+	});
+
+	xhr.send();	
 }
