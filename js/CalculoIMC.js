@@ -53,9 +53,7 @@ function pacienteRules(paciente){
   		}
 	}
 	catch(err) {
-		avisoTop.style.cssText = "text-align: left;";
-		document.getElementById("tituloaviso").textContent = "Aviso";
-		document.getElementById("corpoaviso").innerText  = "Não foi possível incluir o paciente. " + err;
+		showValidation("Não foi possível incluir o paciente.", err);
 		return false;
 	}
 	return true;
@@ -64,6 +62,12 @@ function pacienteRules(paciente){
 
 function resetForm(form){
 	document.getElementById("formulario").reset();
+}
+
+function showValidation(title, content){
+	avisoTop.style.cssText = "text-align: left;";
+	document.getElementById("tituloaviso").textContent = title;
+	document.getElementById("corpoaviso").innerText  = content;
 }
 
 function buildRowTable(paciente,count){
@@ -99,7 +103,7 @@ function buildRowTable(paciente,count){
 	return rowgrid;
 }
 
-function adicionarPaciente() {
+function addPaciente() {
 
 	try {
 		count = count + 1;
@@ -118,13 +122,11 @@ function adicionarPaciente() {
 		resetForm();
 	}
 	catch(err) {
-		avisoTop.style.cssText = "text-align: left;";
-		document.getElementById("tituloaviso").textContent = "Erro ao adicionar o paciente";
-		document.getElementById("corpoaviso").innerText  = "Mensagem do erro.: " + err;
+		showValidation("Erro ao adicionar o paciente.", err.message);
 	}
 }
 
-function removerAviso(){ 
+function removeValidation(){ 
 	var avisoTop = document.getElementById("avisoTop");
 	avisoTop.style.cssText = "text-align: left; display: none; ";
 }
