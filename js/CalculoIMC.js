@@ -108,7 +108,6 @@ function addPaciente() {
 	try {
 		count = count + 1;
 		
-		var avisoTop = document.querySelector("#avisoTop");
 		var form = document.querySelector("#formulario"); 
 		var table = document.querySelector("#table-data");
 
