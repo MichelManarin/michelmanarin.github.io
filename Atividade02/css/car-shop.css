@@ -330,6 +330,14 @@ h3 {
         background: url() center top no-repeat #edf1f5;
     }
 
+    .promotionsection{
+
+        background-color: #fff;
+        border-radius: 2px;
+        box-shadow: 2px 2px 12px #d6d6d6;
+
+    }
+
     .promotionsection h1 {
         color: #000000;
     }
