@@ -30,28 +30,15 @@ class TelaInicial {
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-12">Marca</label>
+                                                <label class="col-sm-12">Modelo</label>
                                                 <div class="col-sm-12">
                                                     <select class="form-control form-control-line">
-                                                        <option>Fiat</option>
-                                                        <option>Volkswagen</option>
-                                                        <option>Audi</option>
                                                     </select>
                                                 </div>
                                             </div>
                                            
 
-                                            <div class="form-group">
-                                                <label class="col-sm-12">Marca</label>
-                                                <div class="col-sm-12">
-                                                    <select class="form-control form-control-line">
-                                                        <option>Fiat</option>
-                                                        <option>Volkswagen</option>
-                                                        <option>Audi</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                           
+                                                                                     
 
                                         <div class="form-group">
                                             <label class="col-md-12">Descrição</label>
