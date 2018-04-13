@@ -1,0 +1,303 @@
+.card{
+	width: 100%;
+	min-height: 25px;
+	color: #000!important;
+    background-color: #ddffff!important;
+    border-width: 1px;
+}
+
+body{
+	background-color: black;
+}
+
+
+.box-filtro button{
+    background-color: #fff;
+    color: black;
+    border-color: white;
+}
+
+.box-filtro label{
+     font-weight: 20;
+}
+
+.box-filtro button:hover{
+    background-color: #fff;
+    color: black;
+    border-color: white;
+}
+
+.promotionsection{
+
+}
+
+.promotionsection h1 {
+    font-size: 105px;
+    font-weight: 900;
+    line-height: 105px;
+    color: #f9f9f9;
+    text-align: center;
+    vertical-align: center;
+}
+
+
+.promotionsection h2 {
+    font-size: 105px;
+    font-weight: 500;
+    line-height: 105px;
+    color: #f9f9f9;
+    text-align: center;
+}
+
+.promotionsection button{
+    position: absolute;
+    left: calc(50% - 100px);
+    background-color: #000000;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    min-height: 35px;
+    min-width: 200px;
+    font-weight: bold;
+    padding: auto;
+    border-radius: 2px;
+}
+
+.promotionsection button{
+    position: absolute;
+    left: calc(50% - 100px);
+    background-color: #000000;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    min-height: 35px;
+    min-width: 200px;
+    font-weight: bold;
+    padding: auto;
+    border-radius: 2px;
+}
+
+.btn-success, .btn-success.disabled {
+    background: #000000;
+    border: 1px solid #000000;
+}
+.btn {
+    border-radius: 3px;
+}
+.btn-success {
+    color: #fff;
+    /* background-color: #5cb85c; */
+    /* border-color: #4cae4c; */
+}
+
+#cars .white-box{
+    box-shadow: 1px 1px 5px 0px #cccccc;
+    border-radius: 5px;
+}
+
+.promotionsection button:hover{
+    
+    background-color: #363636;
+    border:none;
+}
+
+
+
+
+.apresentacao{
+    background: url(../img/car.jpg) center top no-repeat #1e2033;
+    background-size: 100%;
+    background-size: 100%;
+    border-radius: 1px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+}
+
+.form-group, .form-horizontal .form-group {
+    margin-bottom: 10px;
+}
+
+.card h5{
+	text-align: center;
+}
+
+.card:hover{
+	cursor: pointer;
+}
+
+
+#page-wrapper{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.navbar-top-links>li>a {
+}
+
+.navbar-header{
+	min-height: 30px;
+}
+
+.navbar-header {
+    background: #2f323e!important;
+}
+
+
+.navbar-default {
+    box-shadow: none; 
+}
+
+.top-left-part{
+	background: none;
+	    border-right: none;
+}
+
+.bgcar{
+	background: url(https://images.unsplash.com/photo-1467293469891-f05fcbd1c0b8) center top no-repeat #1e2033;
+    background-size: 100%;
+    position: fixed;
+}
+
+.navbar-header {
+    background: #fff;
+}
+
+.navbar-header {
+    background: #fff;
+    border: 0;
+}
+
+.navbar-header h3{
+	font-size: 35px;
+    font-weight: 170;
+    line-height: 35px;
+        font-family: Rubik,sans-serif;
+
+}
+
+.box-filtro{
+	background-color: #e55d4d;
+	border-radius: 7px;
+	color: #eee;
+    box-shadow: 4px 4px #d24939;
+}
+
+.box-filtro h3{
+
+        font-family: Rubik,sans-serif;
+	color: black;
+	font-style: italic;
+
+}
+
+.form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus {
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    float: none;
+}
+
+.form-material .form-group {
+    overflow: hidden
+}
+
+.form-material .form-control {
+    background-color: rgba(0, 0, 0, 0);
+    background-position: center bottom, center calc(99%);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    padding: 0;
+    transition: background 0s ease-out 0s
+}
+
+.form-material .form-control,
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    float: none
+}
+
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-size: 100% 2px, 100% 1px;
+    outline: 0;
+    transition-duration: .3s
+}
+
+.form-bordered .form-group {
+    padding-bottom: 20px
+}
+
+.select2-container .select2-choice {
+    background-image: none!important;
+    border: none!important;
+    height: auto!important;
+    padding: 0!important;
+    line-height: 22px!important;
+    background-color: transparent!important;
+    box-shadow: none!important
+}
+
+.select2-container .select2-choice .select2-arrow {
+    background-image: none!important;
+    background: 0 0;
+    border: none;
+    width: 14px;
+    top: -2px
+}
+
+.select2-container .select2-container-multi.form-control {
+    height: auto
+}
+
+.select2-results .select2-highlighted {
+    color: #fff;
+    background-color: #fff
+}
+
+.select2-drop-active {
+    padding-top: 5px
+}
+
+.select2-search input {
+}
+
+.select2-container-multi {
+    width: 100%
+}
+
+.select2-container-multi .select2-choices {
+    box-shadow: none!important;
+    background-image: none!important;
+    border-radius: 0!important;
+    min-height: 38px
+}
+
+.select2-container-multi .select2-choices .select2-search-choice {
+    padding: 4px 7px 4px 18px;
+    margin: 5px 0 3px 5px;
+    color: #555;
+    background: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.select2-container-multi .select2-choices .select2-search-field input {
+    padding: 7px 7px 7px 10px;
+    font-family: inherit
+}
+
+@media only screen and (max-width: 600px) {
+    .bgcar{
+        background: url() center top no-repeat #1e2033;
+        position: fixed;
+        height: 500px;
+        min-height: 75%;
+    }
+
+}
