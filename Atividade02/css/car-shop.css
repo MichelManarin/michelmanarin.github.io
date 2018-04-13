@@ -301,4 +301,9 @@ body{
         color: #000000;
     }
 
+    .apresentacao{
+       padding-left:  0px; 
+       padding-right: 0px; 
+    }
+
 }
