@@ -208,11 +208,10 @@ h3 {
 }
 
 .box-filtro{
-	background-color: #e55d4d;
-	border-radius: 1px;
+	    box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(-120deg, #cc5d52 0%, #feb14a 100%, #fdaa47 200%);
+	border-radius: 4px;
 	color: #eee;
-    box-shadow: 4px 4px #d24939;
-    box-shadow: none;
     border-bottom: 3px solid white;
 }
 
@@ -335,11 +334,14 @@ h3 {
         background-color: #fff;
         border-radius: 2px;
         box-shadow: 2px 2px 12px #d6d6d6;
+        box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
+        background-image: linear-gradient(-120deg, #26e289 0%, #1a5fa2 100%, #ff0000 200%);
 
     }
 
     .promotionsection h1 {
-        color: #000000;
+        color: #fff;
+        font-size: 75px;
     }
 
     .apresentacao{
