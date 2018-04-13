@@ -102,6 +102,10 @@ body{
 }
 
 
+.container-fluid {
+    padding-bottom: 15px;
+}
+
 
 
 .apresentacao{
@@ -126,11 +130,6 @@ body{
 	cursor: pointer;
 }
 
-
-#page-wrapper{
-	padding-left: 50px;
-	padding-right: 50px;
-}
 
 .navbar-top-links>li>a {
 }
