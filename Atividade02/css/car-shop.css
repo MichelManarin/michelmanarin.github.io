@@ -107,7 +107,9 @@ body{
     padding-bottom: 15px;
 }
 
-
+.top-left-part{
+        min-height: 60px;
+}
 
 .apresentacao{
     background: url(../img/car.jpg) center top no-repeat #1e2033;
@@ -148,10 +150,6 @@ body{
     box-shadow: none; 
 }
 
-.top-left-part{
-	background: none;
-	    border-right: none;
-}
 
 .bgcar{
 	background: url(https://images.unsplash.com/photo-1467293469891-f05fcbd1c0b8) center top no-repeat #1e2033;
