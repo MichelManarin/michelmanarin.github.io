@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Carregando página</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+
+     <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <!-- animation CSS -->
+    <link href="../css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="../css/colors/default.css" id="theme" rel="stylesheet">
+
+    <link href="../css/main.css" rel="stylesheet">
+
+    <link href="css/car-shop.css" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="../index.html">
+                        <!-- Logo icon image, you can use font-icon also --><b>
+                        <!--This is dark logo icon--><img src="../plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="../plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                     </b>
+                        <!-- Logo text image you can use text also --><span class="hidden-xs">
+                        <!--This is dark logo text--><img src="../plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="../plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
+                     </span> </a>
+                </div>
+                <!-- /Logo -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li><a href="../index.html">Atividades</a></li>
+                    <li><a>Resumo</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+                        <h4 class="page-title" id="TITLE-PAGE">Cálculo de IMC</h4> 
+                        <h5 id="DESCRIPTION-PAGE">Criação de grid de cálculo IMC, permitindo inserção de pacientes e visualização do índice de massa corporal</h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-md-4 col-xs-12">
+                        <a href="https://github.com/MichelManarin/michelmanarin.github.io/blob/master/js/CalculoIMC.js" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Acessar GIT
+
+                        </a>
+                        <ol class="breadcrumb">
+                            <li><a href="../index.html">Ínicio</a></li>
+                            <li class="active">Cálculo de IMC</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /row -->
+                <div class="row">
+                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <div class="white-box analytics-info">
+                                <h3 class="box-title">Cotações realizadas</h3>
+                                <ul class="list-inline two-part">
+                                    <li>
+                                        <i class="fa  fa-users" style="color:#151515"; font-size:10em></i>
+                                    </li>
+                                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">659</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <div class="white-box analytics-info">
+                                <h3 class="box-title">Fornecedores</h3>
+                                <ul class="list-inline two-part">
+                                    <li>
+                                        <div id="sparklinedash2"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                                    </li>
+                                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">869</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <div class="white-box analytics-info">
+                                <h3 class="box-title">Visualizações de cotações</h3>
+                                <ul class="list-inline two-part">
+                                    <li>
+                                        <div id="sparklinedash3"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                                    </li>
+                                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">911</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                            <div class="white-box-img img-text">
+                                <img src="img/realizarcotacao.jpg"></img>
+                                <div class="centered">
+                                    <h2 class="noHover">Cadastre uma nova cotação</h2>
+                                </div>
+                            </div>
+                    </div>  
+                </div>
+
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center">FrameWork Ample Admin disponibilizado pela Wrappixel.com - Portfólio Michel Manarin</footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="../js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="../js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/custom.min.js"></script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
+        authDomain: "portfolio-599af.firebaseapp.com",
+        databaseURL: "https://portfolio-599af.firebaseio.com",
+        projectId: "portfolio-599af",
+        storageBucket: "portfolio-599af.appspot.com",
+        messagingSenderId: "876379510056"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
+        authDomain: "portfolio-599af.firebaseapp.com",
+        databaseURL: "https://portfolio-599af.firebaseio.com",
+        projectId: "portfolio-599af",
+        storageBucket: "portfolio-599af.appspot.com",
+        messagingSenderId: "876379510056"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <script>
+
+        var email = "michelmanarin@gmail.com";
+        var password = "92908735";
+
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            console.log(errorCode);
+            console.log(errorMessage);
+        });
+    </script>
+
+    <script>
+    var provider = new firebase.auth.GithubAuthProvider();
+        provider.addScope('user');
+        firebase.auth().signInWithPopup(provider).then(function (result) {
+            console.log('firebase.auth.signInWithPopup > user', result.user);
+            loggedIn(result.user);
+        }).catch(function (error) {
+            console.log('error', error);
+            alert(error.message);
+        });
+        </script>
+
+
+    <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            loggedUser = user;
+            console.log('firebase.auth.onAuthStateChanged > user', user);
+            if (user == null) {
+                $('#div-must-auth').show(400);
+            } else {
+                $('#div-must-auth').hide(200);
+                loggedIn(user);
+            }
+        });
+    </script>
+
+    <div class="jq-toast-wrap top-right">
+    	<div id="avisoTop" class="jq-toast-single jq-has-icon jq-icon-warning" style="text-align: left; display: none;">
+    		<span class="jq-toast-loader jq-toast-loaded" style="-webkit-transition: width 3.1s ease-in; -o-transition: width 3.1s ease-in;  transition: width 3.1s ease-in;                       background-color: #fff;">
+    		
+    		</span>
+    		<span class="close-jq-toast-single" onclick="removeValidation()" >×</span>
+    		<h2 name= "title" class="jq-toast-heading" id="tituloaviso"></h2>
+    	    <div id="corpoaviso">
+               <b></b>
+    	   </div>
+    </div>
+
+</body>
+
+</html>

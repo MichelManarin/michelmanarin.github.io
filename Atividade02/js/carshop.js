@@ -4,59 +4,17 @@ class TelaInicial {
 
   constructor() {
      var i  = document.getElementById("conteudo");
-      i.innerHTML =`<div id="page-wrapper" style="padding-top:20px;">
+      i.innerHTML =`<div id="page-wrapper" style="padding-top:50px;">
             <div class="container-fluid">
 
                 <section class="apresentacao">
 
                     <div class="row">
                         
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                       
+                            
 
-                            <div id="filtros">
-                                <div class="white-box box-filtro">
-                                    <h3 class="box-title">Busque o veículo</h3>
-
-                                    <form class="form-horizontal form-material">
-                                            <div class="form-group">
-                                                <label class="col-sm-12">Marca</label>
-                                                <div class="col-sm-12">
-                                                    <select class="form-control form-control-line">
-                                                        <option>Fiat</option>
-                                                        <option>Volkswagen</option>
-                                                        <option>Audi</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-sm-12">Modelo</label>
-                                                <div class="col-sm-12">
-                                                    <select class="form-control form-control-line">
-                                                    </select>
-                                                </div>
-                                            </div>
-                                           
-
-                                                                                     
-
-                                        <div class="form-group">
-                                            <label class="col-md-12">Descrição</label>
-                                            <div class="col-md-12">
-                                                <input  name="nome" required id="camponome" type="text" placeholder="Descrição do carro" class="form-control form-control-line"> </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <button type="button" onclick="addPaciente()" class="btn btn-success">Buscar</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="promotionsection">
 
                                 <h1>10% OFF</h1>
