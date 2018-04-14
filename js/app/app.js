@@ -67,6 +67,6 @@ function createUser(e){
         alert("erro");
     });
 
-    alert("teste");
+    alert("criado o usuario");
     
 }
