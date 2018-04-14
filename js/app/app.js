@@ -64,9 +64,10 @@ function createUser(e){
     firebase.auth().createUserWithEmailAndPassword(email.value, password.value).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert("erro");
+        swal("Não foi possível criar um novo usuário. " + errorMessage);
+        return false;
     });
 
-    alert("criado o usuario");
+    swal("Excelente!", "Usuário criado com sucesso!", "success");
     
 }
