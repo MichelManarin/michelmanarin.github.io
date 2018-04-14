@@ -33,14 +33,12 @@ function callLogin(e){
 
     });
 
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-        if (firebaseUser){
-            window.location.href = "https://michelmanarin.github.io/portfolio.html";
-        } else {
-            swal("Usuário ou senha incorreto");
-            return true;
-        }
-    });
+
+    if (isLogged()){
+        window.location.href = "https://michelmanarin.github.io/portfolio.html";
+    } else { 
+        swal("Usuário ou senha incorreto");
+    }
 
     
 }
