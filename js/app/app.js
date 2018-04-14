@@ -54,9 +54,19 @@ function isLogged(){
         });
 }
 
-function createUser(email,password){
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+function createUser(e){
+
+    e.preventDefault();
+
+    var email = document.getElementById("email");
+    var password = document.getElementById("senha");
+
+    firebase.auth().createUserWithEmailAndPassword(email.value, password.value).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
+        alert("erro");
     });
+
+    alert("teste");
+    
 }
