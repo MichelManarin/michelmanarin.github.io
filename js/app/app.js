@@ -37,6 +37,7 @@ function callLogin(e){
         if (firebaseUser){
             window.location.href = "https://michelmanarin.github.io/portfolio.html";
         } else {
+            swal("Usuário ou senha incorreto");
             return true;
         }
     });
