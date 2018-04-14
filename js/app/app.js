@@ -12,20 +12,16 @@ function initialization(){
     };
     
     firebase.initializeApp(config);
-
 }
 
 function callLogin(e){
 
     e.preventDefault();
 
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-        if (firebaseUser){
-            window.location.href = "https://michelmanarin.github.io/portfolio.html";
-        } else {
-            return true;
-        }
-    });
+
+    if (isLogged()){
+        window.location.href = "https://michelmanarin.github.io/portfolio.html";
+    } 
 
     var email = document.getElementById("email");
     var password = document.getElementById("senha");
@@ -35,11 +31,15 @@ function callLogin(e){
         var errorCode = error.code;
         var errorMessage = error.message;
 
-        return false;
-
     });
 
-    
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser){
+            window.location.href = "https://michelmanarin.github.io/portfolio.html";
+        } else {
+            return true;
+        }
+    });
 
     
 }
