@@ -27,6 +27,8 @@ function callLogin(e){
         var errorCode = error.code;
         var errorMessage = error.message;
 
+        return false;
+
     });
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
