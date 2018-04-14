@@ -171,76 +171,69 @@
     <!-- Custom Theme JavaScript -->
     <script src="../js/custom.min.js"></script>
 
-    <!-- FIREBASE -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
-        authDomain: "portfolio-599af.firebaseapp.com",
-        databaseURL: "https://portfolio-599af.firebaseio.com",
-        projectId: "portfolio-599af",
-        storageBucket: "portfolio-599af.appspot.com",
-        messagingSenderId: "876379510056"
-      };
-      firebase.initializeApp(config);
-    </script>
+  
 
 
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+
     <script>
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
-        authDomain: "portfolio-599af.firebaseapp.com",
-        databaseURL: "https://portfolio-599af.firebaseio.com",
-        projectId: "portfolio-599af",
-        storageBucket: "portfolio-599af.appspot.com",
-        messagingSenderId: "876379510056"
-    };
-    firebase.initializeApp(config);
-    </script>
+                apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
+                authDomain: "portfolio-599af.firebaseapp.com",
+                databaseURL: "https://portfolio-599af.firebaseio.com",
+                projectId: "portfolio-599af",
+                storageBucket: "portfolio-599af.appspot.com",
+                messagingSenderId: "876379510056"
+            };
 
-    <script>
+        firebase.initializeApp(config);
 
-        var email = "michelmanarin@gmail.com";
-        var password = "92908735";
+        alert("conectado");    
 
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+
+    var email = "sasasa@gmail.com";
+        var password = "sajsaisna558@";
+
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            alert("Erro ao efetuar o login??? : " + error.message);
+        });
+
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+	    if (firebaseUser){
+		        alert("usuario" + firebaseUser);
+	        }else{
+		        alert('nãpo logado');
+	        }
+         });
+
+        /*firebase.auth().signOut().then(function() {
+            console.log("Loggof feito com sucesso")
+        }).catch(function(error) {
+            console.log("erro");
+        });     */
+
+        /* criando usuário
+        var email = "sasasa@gmail.com";
+        var password = "sajsaisna558@";
+
+         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
             
             var errorCode = error.code;
             var errorMessage = error.message;
 
+            console.log(error.message);
             console.log(errorCode);
-            console.log(errorMessage);
-        });
+        });*/
+
     </script>
 
-    <script>
-    var provider = new firebase.auth.GithubAuthProvider();
-        provider.addScope('user');
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-            console.log('firebase.auth.signInWithPopup > user', result.user);
-            loggedIn(result.user);
-        }).catch(function (error) {
-            console.log('error', error);
-            alert(error.message);
-        });
-        </script>
-
-
-    <script>
-        firebase.auth().onAuthStateChanged(function (user) {
-            loggedUser = user;
-            console.log('firebase.auth.onAuthStateChanged > user', user);
-            if (user == null) {
-                $('#div-must-auth').show(400);
-            } else {
-                $('#div-must-auth').hide(200);
-                loggedIn(user);
-            }
-        });
-    </script>
+  
 
     <div class="jq-toast-wrap top-right">
     	<div id="avisoTop" class="jq-toast-single jq-has-icon jq-icon-warning" style="text-align: left; display: none;">
