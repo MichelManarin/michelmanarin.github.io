@@ -19,6 +19,14 @@ function callLogin(e){
 
     e.preventDefault();
 
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser){
+            window.location.href = "https://michelmanarin.github.io/portfolio.html";
+        } else {
+            return true;
+        }
+    });
+
     var email = document.getElementById("email");
     var password = document.getElementById("senha");
 
@@ -31,13 +39,7 @@ function callLogin(e){
 
     });
 
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-        if (firebaseUser){
-                window.location.href = "https://michelmanarin.github.io/index.html";
-            }else{
-                return true;
-            }
-        });
+    
 
     
 }
