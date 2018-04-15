@@ -12,18 +12,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-firebase.auth().onAuthStateChanged(function (user) {
-    loggedUser = user;
-    console.log('firebase.auth.onAuthStateChanged > user', user);
-    if (user == null) {
-        alert("1");
-    } else {
-        alert("2");
-    }
-});
-
 initialization();
-
 
 function initialization(){
     
@@ -48,23 +37,33 @@ function setLogin(user,password){
 
     let returnObj = { message:"", logged:true};
 
-    firebase.auth().signInWithEmailAndPassword(user, password).catch(function(error) {
-
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        
-        returnObj.logged = false;
-
-        if (error.errorCode === 'auth/wrong-password') {
-            returnObj.message = 'Senha incorreta';
-        } else if (error.errorCode === 'auth/invalid-email') {
-            returnObj.message = 'E-mail inválido';
-        } else if (error.errorCode === 'auth/user-disabled') {
-            returnObj.message = 'Usuário desabilitado';
-        } else if (error.errorCode === 'auth/user-not-found') {
-            returnObj.message = 'Usuário incorreto';
-        }    
-    });
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          alert("logadinho");
+        } else {
+            alert("logadndo");
+            firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556").catch(function(error) {
+    
+                alert("errror");
+    
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                
+                
+            
+                if (error.errorCode === 'auth/wrong-password') {
+                    returnObj.message = 'Senha incorreta';
+                } else if (error.errorCode === 'auth/invalid-email') {
+                    returnObj.message = 'E-mail inválido';
+                } else if (error.errorCode === 'auth/user-disabled') {
+                    returnObj.message = 'Usuário desabilitado';
+                } else if (error.errorCode === 'auth/user-not-found') {
+                    returnObj.message = 'Usuário incorreto';
+                }    
+            });
+        }
+      });
 
     return returnObj; 
 }
