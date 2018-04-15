@@ -82,13 +82,13 @@ function createUser(e){
     var email = document.getElementById("email");
     var password = document.getElementById("senha");
 
-    firebase.auth().createUserWithEmailAndPassword(email.value, password.value).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        swal("Não foi possível criar um novo usuário. " + errorMessage);
-        return false;
+    firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+    .then(function(firebaseUser) {
+        swal("Excelente!", "Usuário criado com sucesso!", "success");
+    })
+    .catch(function(error) {
+        swal("Não foi possível criar um novo usuário. " + error.message);
     });
-
-    swal("Excelente!", "Usuário criado com sucesso!", "success");
+  
     
 }
