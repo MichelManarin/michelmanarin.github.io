@@ -33,7 +33,7 @@ function setLogoff(e){
 }
 
 
-function setLogin(user,password){
+function setLogin(username,password){
 
     let returnObj = { message:"", logged:true};
 
