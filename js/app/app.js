@@ -35,25 +35,28 @@ function setLogoff(e){
 
 function setLogin(username,password){
 
+    console.log("1");
+
     let returnObj = { message:"", logged:false};
 
     if (firebase.auth().currentUser) {
-        alert("fazendo logoff");
+        console.log("2");
         firebase.auth().signOut();
     } else {
-
+        console.log("3");
         let firebaseUser = firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
             .then(function(firebaseUser) {
+                console.log("4");
                 alert("Logado com sucesso");
                 returnObj.logged = true;
                 return returnObj;
             })
             .catch(function(error) {
-                
+                console.log("5");
                 alert("Ocorreu um erro ao logar");
 
                 returnObj.logged = false;
-    
+                console.log("6");
                 if (error.errorCode === 'auth/wrong-password') {
                     returnObj.message = 'Senha incorreta';
                 } else if (error.errorCode === 'auth/invalid-email') {
@@ -66,7 +69,7 @@ function setLogin(username,password){
                     returnObj.message = error.message;
                 }
             });
-
+            console.log("7");
         return returnObj;
         
     }
