@@ -37,21 +37,22 @@ function setLogin(username,password){
 
     let returnObj = { message:"", logged:true};
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          alert("logadinho");
-        } else {
-            alert("logadndo");
-            firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556").catch(function(error) {
-    
-                alert("errror");
-    
-                var errorCode = error.code;
-                var errorMessage = error.message;
+    if (firebase.auth().currentUser) {
+        alert("fazendo logoff");
+        firebase.auth().signOut();
+    } else {
+
+        firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
+            .then(function(firebaseUser) {
+                alert("Logado com sucesso");
+                return returnObj;
+            })
+            .catch(function(error) {
                 
-                
-            
+                alert("Ocorreu um erro ao logar");
+
+                returnObj.logged = false;
+    
                 if (error.errorCode === 'auth/wrong-password') {
                     returnObj.message = 'Senha incorreta';
                 } else if (error.errorCode === 'auth/invalid-email') {
@@ -60,14 +61,27 @@ function setLogin(username,password){
                     returnObj.message = 'Usuário desabilitado';
                 } else if (error.errorCode === 'auth/user-not-found') {
                     returnObj.message = 'Usuário incorreto';
-                }    
+                } else {
+                    returnObj.message = error.message;
+                }
             });
-        }
-      });
 
-    return returnObj; 
+        try {
+            firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556");
+        }
+        catch(error) {            
+
+            alert(error);
+
+           
+        }
+
+        return returnObj;
+        
+    }
 }
 
+    
 function isLogged(){
     if (firebase.auth().currentUser) {
         return true;
