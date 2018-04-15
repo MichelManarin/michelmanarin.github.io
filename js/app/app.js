@@ -16,21 +16,26 @@ function initialization(){
 
 function callLogin(user,password){
     
-    var modelReturn = '{ "connection" : [' +
-                          '{ "result":"<result>" , "errMessage":"<message>" } ]}';
+    let resultLogin = { message:"", logged:false};
 
     if (isLogged()){
-        return JSON.parse(modelReturn.replace("<result>","sucess").replace("<message>",""));
+        resultLogin.logged = true;
+        return resultLogin;
     }
 
     firebase.auth().signInWithEmailAndPassword(user, password).catch(function(error) {
-        return JSON.parse(modelReturn.replace("<result>","failure").replace("<message>",error.message));
+        resultLogin.logged  = false;
+        resultLogin.message = error.message;
+        return resultLogin; 
     });
 
     if (isLogged()){
-        return JSON.parse(modelReturn.replace("<result>","sucess").replace("<message>",""));
+        resultLogin.logged = true;
+        return resultLogin;
     } else {
-        return JSON.parse(modelReturn.replace("<result>","failure").replace("<message>","Usuário ou senha incorretos."));
+        resultLogin.logged = false;
+        resultLogin.message = "Usuário ou senha incorretos.";
+        return resultLogin;
     }
 
     

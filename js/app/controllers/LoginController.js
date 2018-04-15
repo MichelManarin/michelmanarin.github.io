@@ -21,10 +21,10 @@ class LoginController {
 
         var objectLogin = callLogin(this._form.email.value,this._form.senha.value);
         
-        if (objectLogin.connection[0].result = "sucess"){
+        if (objectLogin.logged){
             this._loginView.redirect();
         } else {
-            this._loginView.showAlert(objectLogin.errMessage);
+            this._loginView.showAlert(objectLogin.message);
         }
     }
 
