@@ -66,16 +66,6 @@ function setLogin(username,password){
                 }
             });
 
-        try {
-            firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556");
-        }
-        catch(error) {            
-
-            alert(error);
-
-           
-        }
-
         return returnObj;
         
     }
