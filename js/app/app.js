@@ -42,7 +42,7 @@ function setLogin(username,password){
         //firebase.auth().signOut();
     } else {
 
-        let firebaseUser = firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
+        let firebaseUser = firebase.auth().signInWithEmailAndPassword(username, password)
             .then(function(firebaseUser) {
                 window.location.href = "https://michelmanarin.github.io/portfolio.html";
             })
