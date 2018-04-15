@@ -20,9 +20,7 @@ function initialization(){
         redirect();
 }
 
-function setLogoff(e){
-
-    e.preventDefault();
+function setLogoff(){
 
     firebase.auth().signOut().then(function() {
         return true;
@@ -71,7 +69,7 @@ function setLogin(username,password){
     
 function isLogged(){
     if (firebase.auth().currentUser) {
-        return true;
+        swal("Informação", "Sessão encerrada com sucesso!", "success");
     } 
     return false;
 }
