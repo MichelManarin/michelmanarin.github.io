@@ -15,7 +15,9 @@ class LoginController {
 
         event.preventDefault();
 
-        console.log(this._form);
+        if (isLogged()){
+            this._loginView.redirect();
+        }
 
         var objectLogin = callLogin(this._form.email.value,this._form.senha.value);
         
