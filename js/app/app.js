@@ -46,17 +46,13 @@ function setLogin(username,password){
             })
             .catch(function(error) {
 
-                console.log(error.errorCode);
-
-                console.log(error.message);
-
-                if (error.errorCode === 'auth/wrong-password') {
+               if (error.code === 'auth/wrong-password') {
                     swal('Senha incorreta');
-                } else if (error.errorCode === 'auth/invalid-email') {
+                } else if (error.code === 'auth/invalid-email') {
                     swal('E-mail inválido');
-                } else if (error.errorCode === 'auth/user-disabled') {
+                } else if (error.code === 'auth/user-disabled') {
                     swal('Usuário desabilitado');
-                } else if (error.errorCode === 'auth/user-not-found') {
+                } else if (error.code === 'auth/user-not-found') {
                     swal('Usuário incorreto');
                 } else {
                     swal(error.message);
