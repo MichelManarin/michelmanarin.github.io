@@ -50,6 +50,8 @@ function setLogin(username,password){
 
                 console.log(error.errorCode);
 
+                console.log(error.message);
+
                 if (error.errorCode === 'auth/wrong-password') {
                     swal('Senha incorreta');
                 } else if (error.errorCode === 'auth/invalid-email') {
