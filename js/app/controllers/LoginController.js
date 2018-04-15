@@ -21,7 +21,7 @@ class LoginController {
 
         var objectLogin = callLogin(this._form.email.value,this._form.senha.value);
         
-        if (objectLogin.connection[0].result = true){
+        if (objectLogin.connection[0].result = "sucess"){
             this._loginView.redirect();
         } else {
             this._loginView.showAlert(objectLogin.errMessage);

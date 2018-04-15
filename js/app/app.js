@@ -30,7 +30,7 @@ function callLogin(user,password){
     if (isLogged()){
         return JSON.parse(modelReturn.replace("<result>","sucess").replace("<message>",""));
     } else {
-        return JSON.parse(modelReturn.replace("<result>","failtura").replace("<message>","Usuário ou senha incorretos."));
+        return JSON.parse(modelReturn.replace("<result>","failure").replace("<message>","Usuário ou senha incorretos."));
     }
 
     
