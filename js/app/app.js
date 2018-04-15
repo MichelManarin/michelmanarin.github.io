@@ -48,7 +48,8 @@ function setLogin(username,password){
             })
             .catch(function(error) {
 
-                
+                console.log(error.errorCode);
+
                 if (error.errorCode === 'auth/wrong-password') {
                     swal('Senha incorreta');
                 } else if (error.errorCode === 'auth/invalid-email') {
@@ -70,7 +71,6 @@ function isLogged(){
     if (firebase.auth().currentUser) {
         return true;
     } 
-    alert("Não está logado");
     return false;
 }
 
