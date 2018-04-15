@@ -15,8 +15,10 @@ function initialization(){
 
     if (isLogged()){
         alert("está logado");
+    } else {
+        alert("n~]ao está logado");
     }
-    
+
 }
 
 function callLogin(user,password){
