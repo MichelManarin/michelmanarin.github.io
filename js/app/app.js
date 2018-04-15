@@ -12,6 +12,16 @@ var config = {
 
 firebase.initializeApp(config);
 
+firebase.auth().onAuthStateChanged(function (user) {
+    loggedUser = user;
+    console.log('firebase.auth.onAuthStateChanged > user', user);
+    if (user == null) {
+        alert("1");
+    } else {
+        alert("2");
+    }
+});
+
 initialization();
 
 
