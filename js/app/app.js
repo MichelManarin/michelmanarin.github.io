@@ -38,7 +38,8 @@ function setLogin(username,password){
     let returnObj = { message:"", logged:false};
 
     if (firebase.auth().currentUser) {
-        firebase.auth().signOut();
+        window.location.href = "https://michelmanarin.github.io/portfolio.html";
+        //firebase.auth().signOut();
     } else {
 
         let firebaseUser = firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
