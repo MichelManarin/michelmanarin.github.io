@@ -14,30 +14,23 @@ function initialization(){
     firebase.initializeApp(config);
 }
 
-function callLogin(e){
-
-    e.preventDefault();
-
+function callLogin(user,password){
+    
+    var modelReturn = '{ "connection" : [' +
+                          '{ "result":"<result>" , "errMessage":"<message>" } ]}';
 
     if (isLogged()){
-        window.location.href = "https://michelmanarin.github.io/portfolio.html";
-    } 
+        return JSON.parse(modelReturn.replace("<result>","sucess").replace("<message>",""));
+    }
 
-    var email = document.getElementById("email");
-    var password = document.getElementById("senha");
-
-    firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
-
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
+    firebase.auth().signInWithEmailAndPassword(user, password).catch(function(error) {
+        return JSON.parse(modelReturn.replace("<result>","failure").replace("<message>",error.message));
     });
 
-
     if (isLogged()){
-        window.location.href = "https://michelmanarin.github.io/portfolio.html";
-    } else { 
-        swal("Usuário ou senha incorreto");
+        return JSON.parse(modelReturn.replace("<result>","sucess").replace("<message>",""));
+    } else {
+        return JSON.parse(modelReturn.replace("<result>","failtura").replace("<message>","Usuário ou senha incorretos."));
     }
 
     
