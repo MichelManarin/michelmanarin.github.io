@@ -35,7 +35,7 @@ function setLogoff(e){
 
 function setLogin(username,password){
 
-    let returnObj = { message:"", logged:true};
+    let returnObj = { message:"", logged:false};
 
     if (firebase.auth().currentUser) {
         alert("fazendo logoff");
@@ -45,6 +45,7 @@ function setLogin(username,password){
         let firebaseUser = firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
             .then(function(firebaseUser) {
                 alert("Logado com sucesso");
+                returnObj.logged = true;
                 return returnObj;
             })
             .catch(function(error) {
