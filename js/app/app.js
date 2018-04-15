@@ -12,6 +12,11 @@ function initialization(){
     };
     
     firebase.initializeApp(config);
+
+    if (isLogged()){
+        alert("está logado");
+    }
+    
 }
 
 function callLogin(user,password){
