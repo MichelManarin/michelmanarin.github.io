@@ -26,7 +26,6 @@ function setLogoff(event){
 
     firebase.auth().signOut()
         .then(function(firebaseUser) {
-            swal("Informação", "Sessão encerrada com sucesso!", "success");
             window.location.href = "https://michelmanarin.github.io/index.html";
         })
         .catch(function(error) {
