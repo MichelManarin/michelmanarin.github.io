@@ -35,42 +35,31 @@ function setLogoff(e){
 
 function setLogin(username,password){
 
-    console.log("1");
-
     let returnObj = { message:"", logged:false};
 
     if (firebase.auth().currentUser) {
-        console.log("2");
         firebase.auth().signOut();
     } else {
-        console.log("3");
+
         let firebaseUser = firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
             .then(function(firebaseUser) {
-                console.log("4");
-                alert("Logado com sucesso");
-                returnObj.logged = true;
-                return returnObj;
+                window.location.href = "https://michelmanarin.github.io/portfolio.html";
             })
             .catch(function(error) {
-                console.log("5");
-                alert("Ocorreu um erro ao logar");
 
-                returnObj.logged = false;
-                console.log("6");
+                
                 if (error.errorCode === 'auth/wrong-password') {
-                    returnObj.message = 'Senha incorreta';
+                    swal('Senha incorreta');
                 } else if (error.errorCode === 'auth/invalid-email') {
-                    returnObj.message = 'E-mail inválido';
+                    swal('E-mail inválido');
                 } else if (error.errorCode === 'auth/user-disabled') {
-                    returnObj.message = 'Usuário desabilitado';
+                    swal('Usuário desabilitado');
                 } else if (error.errorCode === 'auth/user-not-found') {
-                    returnObj.message = 'Usuário incorreto';
+                    swal('Usuário incorreto');
                 } else {
-                    returnObj.message = error.message;
+                    swal(error.message);
                 }
             });
-            console.log("7");
-        return returnObj;
         
     }
 }

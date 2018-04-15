@@ -12,16 +12,8 @@ class LoginController {
     }
     
     login(event) {
-
         event.preventDefault();
-
-        var objResponse = setLogin(this._form.email.value,this._form.senha.value);
-        
-        if (objResponse.logged){
-            this._loginView.redirect();
-        } else {
-            this._loginView.showAlert(objResponse.message);
-        }
+        setLogin(this._form.email.value,this._form.senha.value);
     }
 
     register(event){
