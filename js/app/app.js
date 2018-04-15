@@ -24,13 +24,14 @@ function setLogoff(event){
 
     event.preventDefault();
 
-    firebase.auth().signOut().then(function() {
-        swal("Informação", "Sessão encerrada com sucesso!", "success");
-        window.location.href = "https://michelmanarin.github.io/index.html";
-    }).catch(function(error) {
-        return false;
+    firebase.auth().signOut()
+        .then(function(firebaseUser) {
+            swal("Informação", "Sessão encerrada com sucesso!", "success");
+            window.location.href = "https://michelmanarin.github.io/index.html";
+        })
+        .catch(function(error) {
+            swal("Erro ao fazer logoff. " + error.message);
     });
-
 }
 
 
