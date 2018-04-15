@@ -15,12 +15,12 @@ class LoginController {
 
         event.preventDefault();
 
-        var objectLogin = callLogin(this._form.email.value,this._form.senha.value);
+        var objResponse = setLogin(this._form.email.value,this._form.senha.value);
         
-        if (objectLogin.logged){
+        if (objResponse.logged){
             this._loginView.redirect();
         } else {
-            this._loginView.showAlert(objectLogin.message);
+            this._loginView.showAlert(objResponse.message);
         }
     }
 

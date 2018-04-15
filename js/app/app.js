@@ -1,7 +1,10 @@
 initialization();
 
+var loggedUser;
+
 function initialization(){
 
+    // Inicializar o firebase
     var config = {
         apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
         authDomain: "portfolio-599af.firebaseapp.com",
@@ -10,65 +13,59 @@ function initialization(){
         storageBucket: "portfolio-599af.appspot.com",
         messagingSenderId: "876379510056"
     };
-    
+
     firebase.initializeApp(config);
-
-    if (isLogged()){
-        alert("está logado");
-    } else {
-        alert("n~]ao está logado");
-    }
-
+    
+    if (isLogged())
+        redirect();
 }
 
-function callLogin(user,password){
-    
-    let resultLogin = { message:"", logged:false};
-
-    if (isLogged()){
-        resultLogin.logged = true;
-        return resultLogin;
-    }
-
-    firebase.auth().signInWithEmailAndPassword(user, password).catch(function(error) {
-        resultLogin.logged  = false;
-        resultLogin.message = error.message;
-        return resultLogin; 
-    });
-
-    if (isLogged()){
-        resultLogin.logged = true;
-        return resultLogin;
-    } else {
-        resultLogin.logged = false;
-        resultLogin.message = "Usuário ou senha incorretos.";
-        return resultLogin;
-    }
-
-    
-}
-
-function logoff (e){
+function setLogoff(e){
 
     e.preventDefault();
 
     firebase.auth().signOut().then(function() {
-       alert("logoff feito com sucesso");
-      }).catch(function(error) {
-        alert("logoff não efetuado." + error.message);
-      });
+        return true;
+    }).catch(function(error) {
+        return false;
+    });
 
+}
+
+
+function setLogin(user,password){
+
+    let returnObj = { message:"", logged:true};
+
+    firebase.auth().signInWithEmailAndPassword(user, password).catch(function(error) {
+
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        
+        returnObj.logged = false;
+
+        if (error.errorCode === 'auth/wrong-password') {
+            returnObj.message = 'Senha incorreta';
+        } else if (error.errorCode === 'auth/invalid-email') {
+            returnObj.message = 'E-mail inválido';
+        } else if (error.errorCode === 'auth/user-disabled') {
+            returnObj.message = 'Usuário desabilitado';
+        } else if (error.errorCode === 'auth/user-not-found') {
+            returnObj.message = 'Usuário incorreto';
+        }    
+    });
+    
+    return returnObj; 
 }
 
 function isLogged(){
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-        if (firebaseUser){
-                return true;
-            }else{
-                return false;
-            }
-        });
+    if (firebase.auth().currentUser) {
+        return true;
+    } 
+    alert("Não está logado");
+    return false;
 }
+
 
 function createUser(e){
 
