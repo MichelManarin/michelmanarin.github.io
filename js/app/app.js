@@ -42,7 +42,7 @@ function setLogin(username,password){
         firebase.auth().signOut();
     } else {
 
-        firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
+        let firebaseUser = firebase.auth().signInWithEmailAndPassword("asasa@asassa", "1556")
             .then(function(firebaseUser) {
                 alert("Logado com sucesso");
                 return returnObj;
