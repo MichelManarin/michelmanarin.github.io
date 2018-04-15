@@ -1,20 +1,21 @@
-initialization();
 
 var loggedUser;
 
+var config = {
+    apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
+    authDomain: "portfolio-599af.firebaseapp.com",
+    databaseURL: "https://portfolio-599af.firebaseio.com",
+    projectId: "portfolio-599af",
+    storageBucket: "portfolio-599af.appspot.com",
+    messagingSenderId: "876379510056"
+};
+
+firebase.initializeApp(config);
+
+initialization();
+
+
 function initialization(){
-
-    // Inicializar o firebase
-    var config = {
-        apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
-        authDomain: "portfolio-599af.firebaseapp.com",
-        databaseURL: "https://portfolio-599af.firebaseio.com",
-        projectId: "portfolio-599af",
-        storageBucket: "portfolio-599af.appspot.com",
-        messagingSenderId: "876379510056"
-    };
-
-    firebase.initializeApp(config);
     
     if (isLogged())
         redirect();
@@ -54,7 +55,7 @@ function setLogin(user,password){
             returnObj.message = 'Usuário incorreto';
         }    
     });
-    
+
     return returnObj; 
 }
 
