@@ -61,7 +61,7 @@
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li><a href="index.html">Atividades</a></li>
-                    <li><a>Resumo</a></li>
+                    <li><a onclick="logoff(event)">Sair</a></li>
                 </ul>
             </div>
             <!-- /.navbar-header -->
@@ -154,17 +154,8 @@
 
     <script src="js/Menu.js"></script>
 
-    <div class="jq-toast-wrap top-right">
-    	<div id="avisoTop" class="jq-toast-single jq-has-icon jq-icon-warning" style="text-align: left; display: none;">
-    		<span class="jq-toast-loader jq-toast-loaded" style="-webkit-transition: width 3.1s ease-in; -o-transition: width 3.1s ease-in;  transition: width 3.1s ease-in;                       background-color: #fff;">
-    		
-    		</span>
-    		<span class="close-jq-toast-single" onclick="removeValidation()" >×</span>
-    		<h2 name= "title" class="jq-toast-heading" id="tituloaviso"></h2>
-    	    <div id="corpoaviso">
-               <b></b>
-    	   </div>
-    </div>
+    <script src="js/app/app.js"></script>
+    
 
 </body>
 
