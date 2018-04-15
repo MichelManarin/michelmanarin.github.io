@@ -16,12 +16,7 @@ class LoginController {
         setLogin(this._form.email.value,this._form.senha.value);
     }
 
-    logoff(event){
-        event.preventDefault();
-        setLogoff();
-    }
-
-    register(event){
+   register(event){
         event.preventDefault();
         this._loginView.update(false);
     }

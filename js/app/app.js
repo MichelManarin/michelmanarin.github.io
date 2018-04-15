@@ -20,7 +20,9 @@ function initialization(){
         redirect();
 }
 
-function setLogoff(){
+function setLogoff(event){
+
+    event.preventDefault();
 
     firebase.auth().signOut().then(function() {
         return true;
