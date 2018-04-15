@@ -17,7 +17,7 @@ initialization();
 function initialization(){
     
     if (isLogged())
-        redirect();
+        window.location.href = "https://michelmanarin.github.io/portfolio.html";
 }
 
 function setLogoff(event){
@@ -25,7 +25,8 @@ function setLogoff(event){
     event.preventDefault();
 
     firebase.auth().signOut().then(function() {
-        return true;
+        swal("Informação", "Sessão encerrada com sucesso!", "success");
+        window.location.href = "https://michelmanarin.github.io/index.html";
     }).catch(function(error) {
         return false;
     });
@@ -67,7 +68,7 @@ function setLogin(username,password){
     
 function isLogged(){
     if (firebase.auth().currentUser) {
-        swal("Informação", "Sessão encerrada com sucesso!", "success");
+        return true;
     } 
     return false;
 }
