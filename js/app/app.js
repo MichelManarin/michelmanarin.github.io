@@ -39,11 +39,11 @@ function callLogin(user,password){
 function logoff (e){
 
     e.preventDefault();
-    
+
     firebase.auth().signOut().then(function() {
-        // Sign-out successful.
+       alert("logoff feito com sucesso");
       }).catch(function(error) {
-        // An error happened.
+        alert("logoff não efetuado." + error.message);
       });
 
 }
