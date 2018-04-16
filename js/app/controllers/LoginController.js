@@ -18,7 +18,7 @@ class LoginController {
     newUser(event) {
         event.preventDefault();
 
-        if (this._check.value === false){
+        if (this._check.checked == false){
             swal("É necessário aceitar os termos de cadastro.");
             return;
         }
