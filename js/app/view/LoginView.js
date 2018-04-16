@@ -101,15 +101,11 @@ class LoginView {
                         <form onsubmit="loginController.newUser(event)" class="form-horizontal new-lg-form" id="loginForm" action="index.html">
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <input class="form-control" type="text" required="" placeholder="Nome"> </div>
-                            </div>
-                            <div class="form-group ">
-                                <div class="col-xs-12">
                                     <input id="email" name="email" class="form-control" type="text" required="" placeholder="E-mail"> </div>
                             </div>
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <input id="senha" name="senha" class="form-control" type="password" required="" placeholder="Senha"> </div>
+                                    <input id="senha" type="password" name="senha" class="form-control" type="password" required="" placeholder="Senha"> </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
