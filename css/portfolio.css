@@ -1,0 +1,14 @@
+  .p-30 {
+    padding: 30px!important;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+  }
+
+ .p-30 h2{
+ 	line-height: 36px;
+    font-size: 24px;
+ }
+
+ .p-20 {
+    padding: 10px!important;
+}
