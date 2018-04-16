@@ -81,7 +81,20 @@ function createUser(email, password){
         swal("Excelente!", "Usuário criado com sucesso!", "success");
     })
     .catch(function(error) {
-        swal("Não foi possível criar um novo usuário. " + error.message);
+
+        if (error.code === 'auth/email-already-in-use') {
+            swal('E-mail já em uso.');
+        } else if (error.code === 'auth/invalid-email') {
+            swal('E-mail inválido');
+        } else if (error.code === 'auth/user-disabled') {
+            swal('Usuário desabilitado');
+        } else if (error.code === 'auth/operation-not-allowed') {
+            swal('Operação não permitida');
+        } else if (error.code === 'auth/weak-password') {
+            swal('Senha é muito fraca');
+        } else {
+            swal(error.message);
+        }
     });
   
     
