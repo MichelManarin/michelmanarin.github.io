@@ -6,6 +6,8 @@ class LoginController {
         this._loginView = new LoginView($('#conteudo'));
         this._email = $("#email");
         this._senha = $("#senha");
+        this._check = null;
+        this._senhaconfirm = null;
     }
     
     login(event) {
@@ -15,6 +17,18 @@ class LoginController {
 
     newUser(event) {
         event.preventDefault();
+
+        if (this._check.value === false){
+            swal("É necessário aceitar os termos de cadastro.");
+            return;
+        }
+
+        if (this._senha.value != this._senhaconfirm.value){
+            swal("A confirmação da senha está incorreta.");
+            return;
+        }
+
+
         createUser(this._email.value,this._senha.value);
     }
 
@@ -26,6 +40,8 @@ class LoginController {
         let $ = document.querySelector.bind(document);
         this._email = $("#email");
         this._senha = $("#senha");
+        this._check = $("#checkbox-signup");
+        this._senhaconfirm = $("#senhaconfirm");
     }
 
     changeLogin(event){

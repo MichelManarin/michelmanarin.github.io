@@ -109,7 +109,7 @@ class LoginView {
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <input class="form-control" type="password" required="" placeholder="Confirmar a senha"> </div>
+                                    <input id="senhaconfirm" class="form-control" type="password" required="" placeholder="Confirmar a senha"> </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
