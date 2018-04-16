@@ -74,14 +74,9 @@ function isLogged(){
 }
 
 
-function createUser(e){
+function createUser(email, password){
 
-    e.preventDefault();
-
-    var email = document.getElementById("email");
-    var password = document.getElementById("senha");
-
-    firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(firebaseUser) {
         swal("Excelente!", "Usuário criado com sucesso!", "success");
     })

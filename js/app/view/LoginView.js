@@ -53,7 +53,7 @@ class LoginView {
                                 </div>
                                 <div class="form-group m-b-0">
                                 <div class="col-sm-12 text-center">
-                                    <p>Você não tem uma conta? <a onclick="register(event);" class="text-primary m-l-5"><b>Cadastra-se</b></a></p>
+                                    <p>Você não tem uma conta? <a style="cursor:pointer;" onclick="loginController.changeRegister(event);" class="text-primary m-l-5"><b>Cadastra-se</b></a></p>
                                 </div>
                                 </div>
                             </form>
@@ -98,18 +98,18 @@ class LoginView {
                 <div class="new-login-box">
                     <div class="white-box">
                         <h3 class="box-title m-b-0">Cadastra-se</h3> <small>Insira os detalhes abaixo</small>
-                        <form class="form-horizontal new-lg-form" id="loginform" action="index.html">
+                        <form onsubmit="loginController.newUser(event)" class="form-horizontal new-lg-form" id="loginForm" action="index.html">
                             <div class="form-group ">
                                 <div class="col-xs-12">
                                     <input class="form-control" type="text" required="" placeholder="Nome"> </div>
                             </div>
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <input id="email" class="form-control" type="text" required="" placeholder="E-mail"> </div>
+                                    <input id="email" name="email" class="form-control" type="text" required="" placeholder="E-mail"> </div>
                             </div>
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <input id="senha" class="form-control" type="password" required="" placeholder="Senha"> </div>
+                                    <input id="senha" name="senha" class="form-control" type="password" required="" placeholder="Senha"> </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
@@ -125,12 +125,12 @@ class LoginView {
                             </div>
                             <div class="form-group text-center m-t-20">
                                 <div class="col-xs-12">
-                                    <button onclick="createUser(event);" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Cadastrar</button>
+                                    <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Cadastrar</button>
                                 </div>
                             </div>
                             <div class="form-group m-b-0">
                                 <div class="col-sm-12 text-center">
-                                    <p>Você já tem uma conta? <a href="login.html" class="text-danger m-l-5"><b>Efetuar login</b></a></p>
+                                    <p>Você já tem uma conta? <a style="cursor:pointer;" onclick="loginController.changeLogin(event);" class="text-danger m-l-5"><b>Efetuar login</b></a></p>
                                 </div>
                             </div>
                         </form>
