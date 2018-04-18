@@ -6,15 +6,12 @@ class PessoaController {
         let $ = document.querySelector.bind(document);
 
         // Criação dos campos da classe que fazem ligação com os inputs
-        this._inputNome = $('#nome');
-        this._inputDataNascimento = $('#data');
-        this._inputEmail = $('#quantidade');
-        this._inputValor = $('#valor');
-        this._inputCPF = $('#cpf');
-
+        this._inputNome     = $('#camponome');
+        this._inputDataNasc = $('#campodata');
+        this._inputEmail    = $('#campoemail');
+        this._inputTelefone = $('#campotelefone');
         this._listaPessoas = new ListaPessoas();
-        
-        this._pessoasView = new PessoasView($('#pessoasView'));
+        this._pessoasView  = new PessoasView($('#pessoasView'));
         this._pessoasView.update(this._listaPessoas);
     }
     
@@ -30,16 +27,17 @@ class PessoaController {
     _criaPessoa() {
         
         return new Pessoa(
-            DateHelper.textoParaData(this._inputData.value),
-            this._inputQuantidade.value,
-            this._inputValor.value);    
+            this._inputNome.value,
+            DateHelper.textoParaData(this._inputDataNasc.value),
+            this._inputEmail.value,
+            this._inputTelefone.value);    
     }
     
     _limpaFormulario() {
      
-        this._inputNome.value = '';
+        /*this._inputNome.value = '';
         this._inputEmail.value = '';
         this._inputCPF.value = '';
-        this._inputNome.focus();   
+        this._inputNome.focus();   */
     }
 }

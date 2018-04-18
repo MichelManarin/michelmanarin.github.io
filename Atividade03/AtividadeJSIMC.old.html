@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="ListaPessoasModulo">
 
 <head>
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
 
     <link href="../css/main.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
+    <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -83,8 +83,31 @@
         <!-- ============================================================== -->
         <!-- Page Content -->
         <!-- ============================================================== -->
-        <div id="pessoasView"></div>
-        
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <input type="text" ng-model="nome">
+                    <p>Olá, Tableless! Meu nome é: {{ nome }}</p>
+                </div>
+                <div ng-controller="ListaPessoasController">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Produto</th>
+                          <th>Quantidade</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="item in itens">
+                          <td><strong>{{ item.produto }}</strong></td>
+                          <td>{{ item.quantidade }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>    
+        </div>
+        <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
@@ -100,21 +123,39 @@
     <!-- Custom Theme JavaScript -->
     <script src="../js/custom.min.js"></script>
 
+     <!--<script src="../js/angular.js"></script>-->
 
-    <script src="js/app/views/PessoaView.js"></script>
-    <script src="js/app/models/ListaPessoas.js"></script>
-    <script src="js/app/models/Pessoa.js"></script>
-    <script src="js/app/controllers/PessoaController.js"></script>
-    
-    <script src="js/app/helpers/DateHelper.js"></script>
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script>
-        /*let n1 = new Negociacao(new Date(),5,700);
-        let volume = n1.obtemVolume();
-        alert(n1.valor);  */     
-        
-        let pessoaController = new PessoaController();    
+    // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
+        authDomain: "portfolio-599af.firebaseapp.com",
+        databaseURL: "https://portfolio-599af.firebaseio.com",
+        projectId: "portfolio-599af",
+        storageBucket: "portfolio-599af.appspot.com",
+        messagingSenderId: "876379510056"
+      };
+      firebase.initializeApp(config);
     </script>
 
+    <script src="js/CalculoIMC.js"></script>
+
+      
+
+
+    <script>
+        angular.module("ListaPessoasModulo", []);
+        angular.module("ListaPessoasModulo").controller("ListaPessoasController", function($scope){
+            $scope.itens = [
+                {produto: 'Leite', quantidade: 2, comprado: false},
+                {produto: 'Cerveja', quantidade: 12, comprado: false}
+            ];
+        });
+    </script>
+
+  
 </body>
 
 </html>
