@@ -69,7 +69,7 @@ function writeData(nome, datanasc, email, telefone) {
 
     if (isLogged) {
 
-            var userid = firebase.auth().currentUser;
+            var userId = firebase.auth().currentUser;
 
             firebase.database().ref(userId + '/pessoas/').set({
                 nome: nome,
