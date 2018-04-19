@@ -107,7 +107,7 @@ class PessoasView {
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-xs-12">
                             <div class="white-box">
-                                <form id="formulario" onsubmit="onclick="pessoaController.adiciona(event)" class="form-horizontal form-material">
+                                <form id="formulario" onsubmit="pessoaController.adiciona(event)" class="form-horizontal form-material">
                                     <div class="form-group">
                                         <label class="col-md-12">Nome</label>
                                         <div class="col-md-12">
