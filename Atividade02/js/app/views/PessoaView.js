@@ -78,11 +78,12 @@ class PessoasView {
                                         </tr>
                                     </thead>
                                     <tbody id="table-data">
-                                        ${model.negociacoes.map(n => `
+                                        ${model._pessoas.map(n => `
                                             <tr>
-                                                <td>${DateHelper.dataParaTexto(n.nome)}</td>
-                                                <td>${DateHelper.dataParaTexto(n.datanasc)}</td>
+                                                <td></td>
+                                                <td>${n.nome}</td>
                                                 <td>${n.email}</td>
+                                                <td>${DateHelper.dataParaTexto(n.datanasc)}</td>
                                                 <td>${n.telefone}</td>
                                             </tr>`).join('')}          
                                         <!--<tr>
@@ -115,7 +116,7 @@ class PessoasView {
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">E-mail</label>
                                         <div class="col-md-12">
-                                            <input  name="email" required id="campoemail" type="text" placeholder="E-mail da pessoa" class="form-control form-control-line" name="example-email" id="example-email"> </div>
+                                            <input  name="email" required id="campoemail" type="text" placeholder="E-mail da pessoa" class="form-control form-control-line" name="example-email"> </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Data de nascimento</label>
@@ -129,7 +130,7 @@ class PessoasView {
                                     </div>        
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button type="button" onclick="adiciona(event)" class="btn btn-success">Inserir pessoa</button>
+                                            <button type="button" onclick="pessoaController.adiciona(event)" class="btn btn-success">Inserir pessoa</button>
                                         </div>
                                     </div>
                                 </form>

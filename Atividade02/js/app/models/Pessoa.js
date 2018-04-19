@@ -4,8 +4,12 @@ class Pessoa {
         
         this._nome     = nome;
         this._datanasc = new Date(nascimento.getTime());
-        this._email = email;
+        this._email    = email;
         this._telefone = telefone;
+        this._ativo    =  true;
+
+        writeData(this._nome, this._datanasc, this._email, this._telefone);
+
 
         //impedir que os atributos do modelo sejam alterados 
         Object.freeze(this);
@@ -13,7 +17,7 @@ class Pessoa {
     
     // metodos get
         get nome() {        
-            return this.nome;
+            return this._nome;
         }
         
         get datanasc() {
@@ -29,5 +33,10 @@ class Pessoa {
         get telefone() {
             
             return this._telefone;
+        }
+
+         get ativo() {
+            
+            return this._ativo;
         }
 }

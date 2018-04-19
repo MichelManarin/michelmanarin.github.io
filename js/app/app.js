@@ -65,9 +65,29 @@ function setLogin(username,password){
     }
 }
 
+function writeData(nome, datanasc, email, telefone) {
+
+    if (isLogged) {
+
+            var userid = firebase.auth().currentUser;
+
+            firebase.database().ref(userId + '/pessoas/').set({
+                nome: nome,
+                datanasc: datanasc,
+                email: email,
+                telefone: telefone,
+                ativo: true
+            });
+    } else {
+        swal('É necessário estar logado para realizar operação de gravação.');
+    }
+
+    
+} 
+
     
 function isLogged(){
-    if (firebase.auth().currentUser) {
+    if (firebase.auth().currentUser != null) {
         return true;
     } 
     return false;
