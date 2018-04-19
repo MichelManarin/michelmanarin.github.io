@@ -65,7 +65,31 @@ function setLogin(username,password){
     }
 }
 
+
 function writeData(nome, datanasc, email, telefone) {
+
+    var postData = {
+      nome: nome,
+      datanasc: datanasc,
+      email: email,
+      telefone: telefone
+    };
+  
+    var newPostKey = firebase.database().ref().child('pessoas').push().key;
+  
+    var updates = {};
+    updates['/pessoas/' + newPostKey] = postData;
+  
+    firebase.database().ref().update(updates)
+    .then(function() {
+        swal("Update com sucesso :");
+    })
+    .catch(function(error) {
+        swal("Erro :" + error.message);
+    });;
+  }
+
+function asasa(nome, datanasc, email, telefone) {
 
     if (isLogged) {
 
