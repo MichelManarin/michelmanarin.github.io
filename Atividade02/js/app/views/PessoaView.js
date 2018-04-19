@@ -130,7 +130,7 @@ class PessoasView {
                                     </div>        
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button type="button" class="btn btn-success">Inserir pessoa</button>
+                                            <button type="submit" class="btn btn-success">Inserir pessoa</button>
                                         </div>
                                     </div>
                                 </form>
