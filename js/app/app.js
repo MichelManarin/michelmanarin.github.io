@@ -74,11 +74,14 @@ function writeData(nome, datanasc, email, telefone) {
       email: email,
       telefone: telefone
     };
+
+    var userId = firebase.auth().currentUser.uid;
   
     var newPostKey = firebase.database().ref().child('pessoas').push().key;
+
   
     var updates = {};
-    updates['/pessoas/' + newPostKey] = postData;
+    updates[userId+'/pessoas/' + newPostKey] = postData;
   
     firebase.database().ref().update(updates)
     .then(function() {
