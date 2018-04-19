@@ -73,7 +73,7 @@ function writeData(nome, datanasc, email, telefone) {
 
             firebase.database().ref(userId + '/pessoas/').set({
                 nome: nome,
-                datanasc: datanasc,
+                datanasc: dataParaTexto(datanasc),
                 email: email,
                 telefone: telefone,
                 ativo: true
