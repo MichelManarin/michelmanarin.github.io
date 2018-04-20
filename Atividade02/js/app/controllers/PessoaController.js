@@ -17,7 +17,7 @@ class PessoaController {
         // Atualizar view
         this._pessoasView  = new PessoasView($('#pessoasView'));
 
-        this_listaPessoas.buscaBanco();
+        this._listaPessoas.buscaBanco();
 
         this._pessoasView.update(this._listaPessoas);
 
