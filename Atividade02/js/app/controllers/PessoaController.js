@@ -26,9 +26,13 @@ class PessoaController {
     }
 
     carregarBD(pessoas){
-        pessoas.forEach(function(pessoa) {
-            this._listaPessoas.adiciona(pessoa);
-        });        
+
+        
+
+        pessoas.forEach(function(value, index) {
+            this._listaPessoas.adiciona(value);
+        });
+
     }
 
 
