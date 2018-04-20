@@ -29,10 +29,10 @@ class PessoaController {
 
         console.log(pessoas);
         console.log(typeof(pessoas))
+
+        for (var pessoa in pessoas) console.log(pessoa);
         
-        pessoas.child().forEach(function(value, index) {
-            this._listaPessoas.adiciona(value);
-        });
+        
 
         pessoas.forEach(function(value, index) {
             this._listaPessoas.adiciona(value);
