@@ -66,20 +66,20 @@ function setLogin(username,password){
 }
 
 
-function ler(){
+function lerPessoas(){
 
     var userId = firebase.auth().currentUser.uid;
     var obj = firebase.database().ref(userId+'/pessoas');
 
     obj.once('value', function(snapshot) {
-        var lista = snapshot.val();
-        console.log(lista);
-        console.log(typeof(lista));
+        
+        var pessoas = snapshot.val();
 
-        return(snapshot.val());
+        if (pessoas != null)
+        {
+            carregarBD(pessoas);
+        }
       });
-
-   
 }
 
 function writeData(nome, datanasc, email, telefone) {

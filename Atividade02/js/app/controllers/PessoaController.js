@@ -21,13 +21,16 @@ class PessoaController {
 
     }
     
-    teste(){
+    buscarPessoasDatabase(){
         ler();
     }
 
-    teste2(){
-        this._listaPessoas.buscaBanco();
+    carregarBD(pessoas){
+        pessoas.forEach(function(pessoa) {
+            this._listaPessoas.adiciona(pessoa);
+        });        
     }
+
 
     adiciona(e) {
         
