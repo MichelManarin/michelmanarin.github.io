@@ -10,14 +10,13 @@ var config = {
     messagingSenderId: "876379510056"
 };
 
-firebase.initializeApp(config);
-
 initialization();
+
 
 function initialization(){
     
-    if (isLogged())
-        window.location.href = "https://michelmanarin.github.io/portfolio.html";
+    firebase.initializeApp(config);
+
 }
 
 function setLogoff(event){
