@@ -21,6 +21,14 @@ class PessoaController {
 
     }
     
+    teste(){
+        ler();
+    }
+
+    teste2(){
+        this._listaPessoas.buscaBanco();
+    }
+
     adiciona(e) {
         
         e.preventDefault();
