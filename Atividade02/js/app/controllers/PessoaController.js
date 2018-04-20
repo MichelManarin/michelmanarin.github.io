@@ -22,7 +22,7 @@ class PessoaController {
     }
     
     buscarPessoasDatabase(){
-        ler();
+        lerPessoas();
     }
 
     carregarBD(pessoas){
