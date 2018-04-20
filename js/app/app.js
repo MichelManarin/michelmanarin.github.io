@@ -66,6 +66,18 @@ function setLogin(username,password){
 }
 
 
+function ler(){
+
+    var userId = firebase.auth().currentUser.uid;
+    var obj = firebase.database().ref(userId+'/pessoas/');
+
+    obj.once('value', function(snapshot) {
+        console.log(snapshot);
+      });
+
+   
+}
+
 function writeData(nome, datanasc, email, telefone) {
 
     var postData = {
