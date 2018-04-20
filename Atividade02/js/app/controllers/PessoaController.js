@@ -29,6 +29,7 @@ class PessoaController {
 
         for (var pessoa in pessoas) this._listaPessoas.adiciona(pessoa);
 
+        this._pessoasView.update(this._listaPessoas);
     }
 
 
