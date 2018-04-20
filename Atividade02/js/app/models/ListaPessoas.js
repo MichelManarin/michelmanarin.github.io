@@ -3,6 +3,13 @@ class ListaPessoas {
     constructor() {
         
         this._pessoas = [];
+
+        // Busca banco 
+        var pessoas = ler();
+
+        pessoas.forEach(function(pessoa) {
+            adiciona(pessoa);
+        });
     }
     
     adiciona(pessoa) {
