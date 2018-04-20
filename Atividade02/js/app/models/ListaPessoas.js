@@ -3,7 +3,9 @@ class ListaPessoas {
     constructor() {
         
         this._pessoas = [];
-
+    }
+    
+    buscaBanco(){
         // Busca banco 
         var pessoas = ler();
 
@@ -11,7 +13,7 @@ class ListaPessoas {
             adiciona(pessoa);
         });
     }
-    
+
     adiciona(pessoa) {
         
         this._pessoas.push(pessoa);
