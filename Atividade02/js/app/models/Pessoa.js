@@ -3,7 +3,7 @@ class Pessoa {
     constructor(nome, nascimento, email, telefone) {
         
         if ((typeof(nascimento)) == 'string'){
-             nascimento = DateHelper.textoParaData(nascimento),
+             nascimento = DateHelper.textoParaData(nascimento);
         }
 
         this._nome     = nome;
