@@ -27,7 +27,12 @@ class PessoaController {
 
     carregarBD(pessoas){
 
+        console.log(pessoas);
+        console.log(typeof(pessoas))
         
+        pessoas.child().forEach(function(value, index) {
+            this._listaPessoas.adiciona(value);
+        });
 
         pessoas.forEach(function(value, index) {
             this._listaPessoas.adiciona(value);
