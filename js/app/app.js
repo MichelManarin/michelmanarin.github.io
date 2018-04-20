@@ -72,7 +72,11 @@ function ler(){
     var obj = firebase.database().ref(userId+'/pessoas');
 
     obj.once('value', function(snapshot) {
-        console.log(snapshot.val());
+        var lista = snapshot.val();
+        console.log(lista);
+        console.log(typeof(lista));
+
+        return(snapshot.val());
       });
 
    
