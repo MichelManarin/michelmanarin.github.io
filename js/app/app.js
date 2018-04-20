@@ -69,7 +69,7 @@ function setLogin(username,password){
 function ler(){
 
     var userId = firebase.auth().currentUser.uid;
-    var obj = firebase.database().ref(userId+'/pessoas/');
+    var obj = firebase.database().ref(userId+'/pessoas');
 
     obj.once('value', function(snapshot) {
         console.log(snapshot.val());
