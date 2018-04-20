@@ -2,6 +2,10 @@ class Pessoa {
     
     constructor(nome, nascimento, email, telefone) {
         
+        if ((typeof(nascimento)) == 'string'){
+             nascimento = DateHelper.textoParaData(nascimento),
+        }
+
         this._nome     = nome;
         this._datanasc = new Date(nascimento.getTime());
         this._email    = email;
