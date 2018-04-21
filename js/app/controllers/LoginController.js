@@ -12,7 +12,7 @@ class LoginController {
     
     login(event) {
         event.preventDefault();
-        conexaoBanco.setLogin(this._email.value,this._senha.value);
+        ConexaoBanco.setLogin(this._email.value,this._senha.value);
     }
 
     newUser(event) {
