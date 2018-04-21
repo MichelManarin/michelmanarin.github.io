@@ -20,7 +20,7 @@ class PessoasView {
                                             <th>E-mail</th>
                                             <th>Data nascimento</th>
                                             <th>Telefone</th>
-                                            <th>Status</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody id="table-data">
@@ -30,6 +30,9 @@ class PessoasView {
                                                 <td>${n.email}</td>
                                                 <td>${DateHelper.dataParaTexto(n.datanasc)}</td>
                                                 <td>${n.telefone}</td>
+                                                <td>
+                                                    <i class="fa fa-trash-o iconremove"></i>
+                                                </td>
                                             </tr>`).join('')}          
                                         <!--<tr>
                                              <td>1</td>
