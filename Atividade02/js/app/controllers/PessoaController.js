@@ -30,7 +30,10 @@ class PessoaController {
         console.log(pessoas);
         console.log(typeof(pessoas));
 
-        for (var pessoa in pessoas) console.log(pessoa);
+        for (var pessoa in pessoas){
+            console.log(pessoa);
+            console.log(typeof(pessoa));
+        }   ;
 
         for (var pessoa in pessoas){
             pessoa.datanasc = new Date(pessoa.datanasc);
