@@ -79,7 +79,7 @@ class ConexaoBanco {
                 });
           
             } else {
-                swal('Usuário não está autentificado.');
+                swal('Usuário não está autentificado: \n  Guardian Route ainda não foi implementado, mas você não terá acesso ao dados do banco. Para um bom funcionamento do sistema, volte para o index e faça o login. ');
             }
         });
 
@@ -105,7 +105,7 @@ class ConexaoBanco {
     
         firebase.database().ref().update(updates)
         .then(function() {
-            swal("Update com sucesso :");
+            swal("Registro inserido com sucesso.");
         })
         .catch(function(error) {
             swal("Erro :" + error.message);
