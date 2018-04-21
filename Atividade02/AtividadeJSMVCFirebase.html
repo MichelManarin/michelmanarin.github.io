@@ -211,6 +211,12 @@
     <script>   
         var conexaoBanco = new ConexaoBanco();
         var pessoaController = new PessoaController();    
+        
+        if (ConexaoBanco.isLogged()){
+            alert("tem login");
+        } else {
+            alert("não tem login");
+        }
         pessoaController.buscarDadosBD();
     </script>
 
