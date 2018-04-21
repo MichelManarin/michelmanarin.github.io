@@ -30,17 +30,13 @@ class PessoaController {
         console.log(pessoas);
         console.log(typeof(pessoas));
 
-        for (var pessoa in pessoas){
-            console.log(pessoa);
-            console.log(typeof(pessoa));
-        }   ;
+        pessoas.forEach(function(value, index) {
+            value.datanasc = new Date(value.datanasc);
 
-        for (var pessoa in pessoas){
-            pessoa.datanasc = new Date(pessoa.datanasc);
-            this._listaPessoas.adiciona(pessoa);
-        }    
+            this._listaPessoas.adiciona(value);
+        });
 
-        this._pessoasView.update(this._listaPessoas);
+       
     }
 
 
