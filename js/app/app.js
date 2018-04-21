@@ -76,7 +76,7 @@ function lerPessoas(){
 
         if (pessoas != null)
         {
-            pessoaController.carregarBD(pessoas);
+            pessoaController.carregar(pessoas);
         }
       });
 }

@@ -21,22 +21,17 @@ class PessoaController {
 
     }
     
-    buscarPessoasDatabase(){
+    buscarDadosBD(){
         lerPessoas();
     }
 
-    carregarBD(pessoas){
-
-        console.log(pessoas);
-        console.log(typeof(pessoas));
+    carregar(pessoas){
 
         for (var pessoa in pessoas){
             var obj = pessoas[pessoa];
             obj.datanasc = new Date(obj.datanasc);
             this._listaPessoas.adiciona(obj);
         } ;
-
-     
 
         this._pessoasView.update(this._listaPessoas);
     }
