@@ -25,11 +25,10 @@ class ListaPessoas {
         var hoje = new Date();
         var somaIdade = 0.0;
 
-        while (i < this._pessoas.length) {
-            console.log(i);
-            somaIdade += i.datanasc.getFullYear() - hoje.getFullYear();
-        }
-
+        for (var pessoa in this._pessoas){
+            somaIdade += pessoa.datanasc.getFullYear() - hoje.getFullYear();
+        } ;
+    
         if (this._pessoas.length > 0)
             return somaIdade / this._pessoas.length;
         else    
