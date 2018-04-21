@@ -79,7 +79,7 @@ class ConexaoBanco {
                 });
           
             } else {
-                swal('Usuário não está autentificado: \n\n Guardian Route ainda não foi implementado, ou seja, terás acesso ao restante das páginas do site, mas não terás acesso aos dados do banco. Para um bom funcionamento do sistema, volte para o index e faça o login. ');
+                swal('Usuário não está autentificado: \n\n Guardian Route ainda não foi implementado. Para uma melhor experiencia e acesso ao banco de dados realize o login.');
             }
         });
 
