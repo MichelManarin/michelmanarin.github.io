@@ -22,10 +22,8 @@ class PessoaController {
     }
     
     buscarDadosBD(){
-
-        canActivate
-
-        ConexaoBanco.lerPessoas();
+        if (ConexaoBanco.canActivate == true)
+            ConexaoBanco.lerPessoas();
     }
 
     carregar(pessoas){
