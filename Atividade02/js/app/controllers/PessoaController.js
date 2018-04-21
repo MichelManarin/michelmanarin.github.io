@@ -22,7 +22,7 @@ class PessoaController {
     }
     
     buscarDadosBD(){
-        conexaoBanco.lerPessoas();
+        ConexaoBanco.lerPessoas();
     }
 
     carregar(pessoas){
