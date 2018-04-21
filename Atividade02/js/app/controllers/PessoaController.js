@@ -27,6 +27,11 @@ class PessoaController {
 
     carregarBD(pessoas){
 
+        console.log(pessoas);
+        console.log(typeof(pessoas));
+
+        for (var pessoa in pessoas) console.log(pessoa);
+
         for (var pessoa in pessoas){
             pessoa.datanasc = new Date(pessoa.datanasc);
             this._listaPessoas.adiciona(pessoa);
