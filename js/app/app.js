@@ -17,7 +17,7 @@ class ConexaoBanco {
     }
 
     static _initialization(){  
-        firebase.initializeApp(config); 
+        firebase.initializeApp(this._config); 
     }
 
     static setLogoff(event){
