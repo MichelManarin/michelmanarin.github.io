@@ -210,14 +210,10 @@
     <script src="js/app/helpers/DateHelper.js"></script>
     <script>   
         var conexaoBanco = new ConexaoBanco();
-        var pessoaController = new PessoaController();    
+        var pessoaController = new PessoaController();   
+        ConexaoBanco.canActivate();
+
         
-        if (ConexaoBanco.isLogged()){
-            alert("tem login");
-        } else {
-            alert("não tem login");
-        }
-        pessoaController.buscarDadosBD();
     </script>
 
 </body>

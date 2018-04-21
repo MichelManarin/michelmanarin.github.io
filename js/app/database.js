@@ -16,6 +16,22 @@ class ConexaoBanco {
 
     }
 
+    static canActivate(){
+        return new Promise(resolve => {
+            if (firebase.auth().currentUser) {
+                resolve(true);
+            } else {
+                const unsubscribe = firebase.auth().onAuthStateChanged(function (user) {
+                    unsubscribe();
+                    if (user) {
+                        resolve(true);
+                    } else {
+                        resolve(false);
+                    }
+                });
+            }
+        });
+    }
 
     static setLogoff(event){
 
