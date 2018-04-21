@@ -65,7 +65,6 @@ class ConexaoBanco {
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                console.log(1);
                 var userId = firebase.auth().currentUser.uid;
                 var obj = firebase.database().ref(userId+'/pessoas');
 
@@ -80,8 +79,7 @@ class ConexaoBanco {
                 });
           
             } else {
-                console.log(2);
-              // No user is signed in.
+                swal('Usuário não está autentificado.');
             }
         });
 

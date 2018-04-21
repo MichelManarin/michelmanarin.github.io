@@ -16,7 +16,6 @@ class PessoasView {
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
                                             <th>Nome</th>
                                             <th>E-mail</th>
                                             <th>Data nascimento</th>
@@ -27,7 +26,6 @@ class PessoasView {
                                     <tbody id="table-data">
                                         ${model._pessoas.map(n => `
                                             <tr>
-                                                <td></td>
                                                 <td>${n.nome}</td>
                                                 <td>${n.email}</td>
                                                 <td>${DateHelper.dataParaTexto(n.datanasc)}</td>
