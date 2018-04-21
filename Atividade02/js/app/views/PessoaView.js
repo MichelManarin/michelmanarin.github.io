@@ -61,5 +61,7 @@ class PessoasView {
     update(model) {
         
         this._elemento.innerHTML = this._template(model);
+
     }
+
 }

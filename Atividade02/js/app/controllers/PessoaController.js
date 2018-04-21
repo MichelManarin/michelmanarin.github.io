@@ -11,6 +11,11 @@ class PessoaController {
         this._inputEmail    = $('#campoemail');
         this._inputTelefone = $('#campotelefone');
 
+        this._cardContadorPessoas = $('#cardcontadorpessoas');
+        this._cardNovasPessoas    = $('#cardnovaspessoas');
+        this._cardMediaIdade      = $('#cardmediaidade');
+        
+
         // Instancia collection de pessoas
         this._listaPessoas = new ListaPessoas();
 
@@ -18,7 +23,8 @@ class PessoaController {
         this._pessoasView  = new PessoasView($('#pessoasView'));
 
         this._pessoasView.update(this._listaPessoas);
-
+        this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
+        this._cardMediaIdade.textContent = this._listaPessoas.getAverage();
         
         ConexaoBanco.lerPessoas();
 
