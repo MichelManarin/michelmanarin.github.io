@@ -27,7 +27,10 @@ class PessoaController {
 
     carregarBD(pessoas){
 
-        for (var pessoa in pessoas) this._listaPessoas.adiciona(pessoa);
+        for (var pessoa in pessoas){
+            pessoa.datanasc = DateHelper.textoParaData(pessoa.datanasc);
+            this._listaPessoas.adiciona(pessoa);
+        }    
 
         this._pessoasView.update(this._listaPessoas);
     }
