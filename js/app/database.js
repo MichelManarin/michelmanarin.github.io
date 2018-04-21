@@ -63,18 +63,29 @@ class ConexaoBanco {
 
     static lerPessoas(){
 
-        var userId = firebase.auth().currentUser.uid;
-        var obj = firebase.database().ref(userId+'/pessoas');
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log(1);
+                var userId = firebase.auth().currentUser.uid;
+                var obj = firebase.database().ref(userId+'/pessoas');
 
-        obj.once('value', function(snapshot) {
-            
-            var pessoas = snapshot.val();
+                obj.once('value', function(snapshot) {
+                    
+                    var pessoas = snapshot.val();
 
-            if (pessoas != null)
-            {
-                pessoaController.carregar(pessoas);
+                    if (pessoas != null)
+                    {
+                        pessoaController.carregar(pessoas);
+                    }
+                });
+          
+            } else {
+                console.log(2);
+              // No user is signed in.
             }
         });
+
+        
     }
 
     static writeData(nome, datanasc, email, telefone) {
