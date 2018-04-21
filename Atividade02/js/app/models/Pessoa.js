@@ -12,7 +12,7 @@ class Pessoa {
         this._telefone = telefone;
         this._ativo    =  true;
 
-        writeData(this._nome, this._datanasc, this._email, this._telefone);
+        ConexaoBanco.writeData(this._nome, this._datanasc, this._email, this._telefone);
 
 
         //impedir que os atributos do modelo sejam alterados 
