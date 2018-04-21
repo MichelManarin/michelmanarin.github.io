@@ -19,11 +19,13 @@ class PessoaController {
 
         this._pessoasView.update(this._listaPessoas);
 
+        
+        ConexaoBanco.lerPessoas();
+
     }
     
     buscarDadosBD(){
-        if (ConexaoBanco.canActivate == true)
-            ConexaoBanco.lerPessoas();
+        ConexaoBanco.lerPessoas();
     }
 
     carregar(pessoas){

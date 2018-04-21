@@ -211,7 +211,16 @@
     <script>   
         var conexaoBanco = new ConexaoBanco();
         var pessoaController = new PessoaController();   
-        ConexaoBanco.canActivate();
+/*
+        firebase.auth().onAuthStateChanged(function (user) {
+
+            if (user) {
+                pessoaController.buscarDadosBD();
+            } else {
+                resolve(false);
+            }
+            
+        });*/
 
         
     </script>
