@@ -12,13 +12,10 @@ class ConexaoBanco {
                                 messagingSenderId: "876379510056"
                             };
         
-        this._initialization();
-
-    }
-
-    static _initialization(){  
         firebase.initializeApp(this._config); 
+
     }
+
 
     static setLogoff(event){
 
