@@ -81,10 +81,10 @@ class ConexaoBanco {
     static writeData(nome, datanasc, email, telefone) {
 
         var postData = {
-        nome: nome,
-        datanasc: datanasc,
-        email: email,
-        telefone: telefone
+            nome: nome,
+            datanasc: datanasc,
+            email: email,
+            telefone: telefone
         };
 
         var userId = firebase.auth().currentUser.uid;
@@ -102,6 +102,24 @@ class ConexaoBanco {
         .catch(function(error) {
             swal("Erro :" + error.message);
         });;
+    }
+
+    static insert(postData,node) {
+
+        var userId = firebase.auth().currentUser.uid;
+        var newHandle = firebase.database().ref().child(node).push().key;
+
+    
+        var updates = {};
+        updates[userId+'/'+node+'/' + newHandle] = postData;
+    
+        firebase.database().ref().update(updates)
+            .then(function() {
+                swal("Update com sucesso :");
+            })
+            .catch(function(error) {
+                swal("Erro :" + error.message);
+            });;
     }
 
     static asasa(nome, datanasc, email, telefone) {
