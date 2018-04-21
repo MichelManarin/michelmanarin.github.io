@@ -15,7 +15,10 @@ initialization();
 
 function initialization(){
     
-    firebase.initializeApp(config);
+    firebase.initializeApp(config)
+        .then(function() {
+            pessoaController.buscarDadosBD();   
+        });
 
 }
 
