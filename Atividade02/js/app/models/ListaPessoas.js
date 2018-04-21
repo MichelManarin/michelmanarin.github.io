@@ -26,6 +26,7 @@ class ListaPessoas {
         var somaIdade = 0.0;
 
         while (i < this._pessoas.length) {
+            console.log(i);
             somaIdade += i.datanasc.getFullYear() - hoje.getFullYear();
         }
 
