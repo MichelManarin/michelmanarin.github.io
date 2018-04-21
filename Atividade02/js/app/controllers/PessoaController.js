@@ -23,13 +23,17 @@ class PessoaController {
         this._pessoasView  = new PessoasView($('#pessoasView'));
 
         this._pessoasView.update(this._listaPessoas);
-        this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
-        this._cardMediaIdade.textContent = this._listaPessoas.getAverage();
         
         ConexaoBanco.lerPessoas();
 
     }
     
+    setInfoCard(){
+        this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
+        this._cardMediaIdade.textContent = this._listaPessoas.getAverage();
+    }
+    
+
     buscarDadosBD(){
         ConexaoBanco.lerPessoas();
     }

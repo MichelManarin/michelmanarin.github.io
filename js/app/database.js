@@ -75,6 +75,7 @@ class ConexaoBanco {
                     if (pessoas != null)
                     {
                         pessoaController.carregar(pessoas);
+                        pessoaController.setInfoCard();
                     }
                 });
           
