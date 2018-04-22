@@ -86,9 +86,9 @@ class PessoaController {
     
     _limpaFormulario() {
      
-        this._inputNome.reset();
-        this._inputDataNasc.reset();
-        this._inputEmail.reset();
-        this._inputTelefone.reset();
+        this._inputNome.value ="";
+        this._inputDataNasc.value ="";
+        this._inputEmail.value ="";
+        this._inputTelefone.value ="";
     }
 }
