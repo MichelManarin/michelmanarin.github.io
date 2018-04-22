@@ -61,14 +61,6 @@ class PessoasView {
         
         this._elemento.innerHTML = this._template(model);
 
-        var elements =  document.querySelector("#removebutton");    
-
-        elements.forEach(function(element) {
-            element.addEventListener("click", function() {
-               pessoaController.deleteRow(this);
-            });
-        });
-
     }
 
 }
