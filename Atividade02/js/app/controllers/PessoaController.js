@@ -32,7 +32,7 @@ class PessoaController {
     
     setInfoCard(){
         this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
-        this._cardMediaIdade.textContent = this._listaPessoas.getAverage();
+        this._cardMediaIdade.textContent = (this._listaPessoas.getAverage()).toFixed(2);
     }
     
 
