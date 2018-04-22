@@ -29,6 +29,16 @@ class PessoaController {
         ConexaoBanco.lerPessoas();
 
     }
+
+    deleteRow(){
+
+        var row = row.parentNode.parentNode;
+        row.querySelector("#nomevalue");    
+
+        console.log(i);
+        var table = document.getElementById("table-data");
+  table.deleteRow(i-1);
+    }
     
     setInfoCard(){
         this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
