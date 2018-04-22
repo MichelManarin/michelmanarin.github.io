@@ -14,6 +14,8 @@ class PessoaController {
         this._cardContadorPessoas = $('#cardcontadorpessoas');
         this._cardNovasPessoas    = $('#cardnovaspessoas');
         this._cardMediaIdade      = $('#cardmediaidade');
+
+        this._loading = $('#loading');
         
 
         // Instancia collection de pessoas
@@ -35,6 +37,7 @@ class PessoaController {
     
 
     buscarDadosBD(){
+        this._loading.removeAttribute("style");
         ConexaoBanco.lerPessoas();
     }
 
@@ -47,6 +50,9 @@ class PessoaController {
         } ;
 
         this._pessoasView.update(this._listaPessoas);
+        
+        this._loading.style.width='display:none';
+
     }
 
 
