@@ -50,7 +50,6 @@ class PessoaController {
         } ;
 
         this._pessoasView.update(this._listaPessoas);
-        
         this._loading.style.width='display:none';
 
     }
@@ -62,6 +61,7 @@ class PessoaController {
 
         this._listaPessoas.adiciona(this._criaPessoa());
         this._pessoasView.update(this._listaPessoas);
+        this.setInfoCard();
         this._limpaFormulario();   
     }
     
@@ -76,9 +76,9 @@ class PessoaController {
     
     _limpaFormulario() {
      
-        /*this._inputNome.value = '';
-        this._inputEmail.value = '';
-        this._inputCPF.value = '';
-        this._inputNome.focus();   */
+        this._inputNome.reset();
+        this._inputDataNasc.reset();
+        this._inputEmail.reset();
+        this._inputTelefone.reset();
     }
 }
