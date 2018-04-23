@@ -59,3 +59,10 @@
     -moz-box-shadow:inset 0px 0px 0px 3px #00ff97;
     box-shadow:inset 0px 0px 0px 3px #00ff97;
 }
+
+.status-text{
+    color:#fff;
+    text-shadow: 1px 1px 3px rgba(150, 150, 150, 1);
+    font-size: 15px;
+    text-transform: uppercase;
+}
