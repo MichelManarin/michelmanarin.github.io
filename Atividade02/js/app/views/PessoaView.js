@@ -1,9 +1,4 @@
-class PessoasView {
-    
-    constructor(elemento) {
-        document.title = "JS FIREBASE";
-        this._elemento = elemento;
-    }
+class PessoasView extends View {
     
     _template(model) {
         
@@ -54,12 +49,6 @@ class PessoasView {
 
 
 
-
-    }
-    
-    update(model) {
-        
-        this._elemento.innerHTML = this._template(model);
 
     }
 
