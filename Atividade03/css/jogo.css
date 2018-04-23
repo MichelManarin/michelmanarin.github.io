@@ -35,3 +35,23 @@
     text-transform: uppercase;
     min-width: 280px;
 }
+
+.pergunta{
+    font-size: 25px;
+    color:white;
+}
+
+.complete-me{
+    color:#00ff97;
+}
+
+.white-box{
+    border-radius: 5px;
+}
+
+.white-box:hover{
+    cursor: pointer;
+    -webkit-box-shadow:inset 0px 0px 0px 3px #00ff97;
+    -moz-box-shadow:inset 0px 0px 0px 3px #00ff97;
+    box-shadow:inset 0px 0px 0px 3px #00ff97;
+}
