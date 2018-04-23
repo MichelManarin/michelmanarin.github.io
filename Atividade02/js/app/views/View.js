@@ -1,7 +1,6 @@
 class View {
 
     constructor(elemento) {
-        document.title = "JS FIREBASE";
         this._elemento = elemento;
     }
 

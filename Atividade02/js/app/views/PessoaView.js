@@ -1,5 +1,11 @@
 class PessoasView extends View {
     
+    constructor(elemento) {
+        document.title = "JS FIREBASE";
+        super(elemento);
+    }
+
+
     _template(model) {
         
         return `
