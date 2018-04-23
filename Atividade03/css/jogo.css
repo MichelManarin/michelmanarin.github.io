@@ -1,11 +1,15 @@
 .bg{
-    background: url(../img/bg.jpg) center top no-repeat #2b5876!important;
+    background: url(../img/bg.jpg) no-repeat center center #2b5876!important;
     background-size: 100%!important;
     background-position: center!important;
     background-repeat: no-repeat!important;
     background-attachment: fixed!important;
     background-repeat: no-repeat!important;
     background-size: auto!important;
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
 }
 
 
