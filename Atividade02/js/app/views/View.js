@@ -4,7 +4,10 @@ class View {
         this._elemento = elemento;
     }
 
-    _template(model) {}
+    _template() {
+        throw new Error('O metodo _template deve ser implementado.');        
+    }
+
 
     update(model) {
         
