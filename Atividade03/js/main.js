@@ -1,4 +1,21 @@
-var perguntas = {"dados":[
+
+var countRodada = 1;
+var acertadas = 0;
+var erradas = 0;
+var posicao = 0;
+var perguntas = null;
+var elementsOptions = null;
+
+$(document).ready(function(){
+    
+    var elementsOptions = $("[id^='resposta']")
+    startGame();
+    
+
+});
+
+function retornaPerguntas(){
+    return {"dados":[
         {
             "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
             "resposta1": "Friday",
@@ -16,41 +33,26 @@ var perguntas = {"dados":[
             "resposta3": "Malicioso",
             "resposta4": "Água",
             "resposta5": "Comida",
-            "resposta6": "Atencioso",
-            "opcao"    :  "Responsável"
+            "resposta6": "Manhoso",
+            "opcao"    : "Manhoso"
         }
     ]
 };
-
-var perguntas = perguntas.dados;
-
-var countRodada = 1;
-var acertadas = 0;
-var erradas = 0;
-var posicao = 0;
-
-var elementsOptions = null;
-
-$(document).ready(function(){
-    
-    var elementsOptions = $("[id^='resposta']")
-    startGame();
-    
-
-});
+}
 
 function startGame(){
     
+    perguntas = retornaPerguntas().dados;
     novaRodada();
     FinalizaJogo();
 }
 
 function novaRodada(){
 
+    posicao = Math.floor(Math.random()*$(perguntas).size());
+
     $("[id^='resposta']").each(function(index, element) {
                 
-        posicao = Math.floor(Math.random()*$(perguntas).size());
-
         $(".pergunta").html(perguntas[posicao].pergunta);
 
         if (index == 0){
