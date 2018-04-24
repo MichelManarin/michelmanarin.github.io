@@ -45,6 +45,15 @@ function startGame(){
         
     listaPerguntas = retornaPerguntas().dados;
     countPerguntas = $(listaPerguntas).size();
+
+    $("#btnsair").on("click", function() {
+        window.location.href = "https://michelmanarin.github.io/portfolio.html";
+    });
+
+    $("#btnrecomecar").on("click", function() {
+        location.reload();
+    });
+
     novaRodada();
 }
 

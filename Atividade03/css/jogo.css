@@ -32,6 +32,11 @@
     transform: translate(-50%, -50%);
 }
 
+.btn-circle{
+    padding:0;
+}
+
+
 .lvl-text{
     color:#fff;
     text-shadow: 1px 1px 3px rgba(150, 150, 150, 1);
