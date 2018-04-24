@@ -1,126 +1,129 @@
-var perguntas = [
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    },
-    {
-        "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
-        "resposta1": "Friday",
-        "resposta2": "Wednesday",
-        "resposta3": "Saturday",
-        "resposta4": "Yesterday",
-        "resposta5": "Good",
-        "resposta6": "Thursday"
-    }
-];
+var perguntas = {"dados":[
+        {
+            "pergunta": "Monday, Tuesday,<b class='complete-me'>[?]</b>.",
+            "resposta1": "Friday",
+            "resposta2": "Wednesday",
+            "resposta3": "Saturday",
+            "resposta4": "Yesterday",
+            "resposta5": "Good",
+            "resposta6": "Thursday",
+            "opcao"    :  "Wednesday"
+        },
+        {
+            "pergunta": "Tradução a palavra: <b class='complete-me'>[SLY]</b>",
+            "resposta1": "Preguiçoso",
+            "resposta2": "Esperto",
+            "resposta3": "Malicioso",
+            "resposta4": "Água",
+            "resposta5": "Comida",
+            "resposta6": "Atencioso",
+            "opcao"    :  "Responsável"
+        }
+    ]
+};
 
-var countRodada = 0;
+var perguntas = perguntas.dados;
+
+var countRodada = 1;
 var acertadas = 0;
 var erradas = 0;
+var posicao = 0;
 
-var listaRespostas = $("#resposta");
+var elementsOptions = null;
 
-$(function() {
-    //inicializaContadores();
+$(document).ready(function(){
+    
+    var elementsOptions = $("[id^='resposta']")
+    startGame();
+    
+
 });
 
+function startGame(){
+    
+    novaRodada();
+    FinalizaJogo();
+}
 
-function iniciarRodada(){
+function novaRodada(){
 
-    $.each(perguntas, function() {
-        $.each(this, function(index, value) {
-                console.log(index + '=' + value);
+    $("[id^='resposta']").each(function(index, element) {
+                
+        posicao = Math.floor(Math.random()*$(perguntas).size());
+
+        $(".pergunta").html(perguntas[posicao].pergunta);
+
+        if (index == 0){
+            $(element).text(perguntas[posicao].resposta1);
+        } else if (index == 1){
+            $(element).text(perguntas[posicao].resposta2);
+        } else if (index == 2){
+            $(element).text(perguntas[posicao].resposta3);
+        } else if (index == 3){
+            $(element).text(perguntas[posicao].resposta4);
+        } else if (index == 4){
+            $(element).text(perguntas[posicao].resposta5);
+        } else if (index == 5){
+            $(element).text(perguntas[posicao].resposta6);
+        }
+
+        $(element).parent().on("click", function() {
+            finalizeRodada($(element));
         });
+
     });
-        
 
+   
+}
 
+function AjustarInfo(){
+    let percentual = ((acertadas + erradas) / acertadas * 100);
+    $("#percentual").text(percentual.toString());
+}
+
+function FinalizaJogo(){
+
+}
+
+function finalizeRodada(element){
+    
+   
+
+    countRodada += 1;
+
+    if ($(element).text() == perguntas[posicao].opcao){
+        acertadas += 1;
+    } else {
+        erradas += 1;
+    }
+    perguntas.splice(posicao, 1);
+
+    AjustarInfo();
+
+    if ($(perguntas).size() == 0){
+        return "";
+    } else {
+        //alert("novarodada");
+        novaRodada();
+    }
+
+}
+
+function inicializaMarcadores() {
+
+    var frase = $("#resposta").text();
+    campo.on("input", function() {
+        var digitado = campo.val();
+        var comparavel = frase.substr(0, digitado.length);
+
+        if (digitado == comparavel) {
+            campo.addClass("borda-verde");
+            campo.removeClass("borda-vermelha");
+        } else {
+            campo.addClass("borda-vermelha");
+            campo.removeClass("borda-verde");
+        }
+    });
 }
 
 function inicializaContadores() {
