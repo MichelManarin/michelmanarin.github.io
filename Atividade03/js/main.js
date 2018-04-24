@@ -36,6 +36,86 @@ function retornaPerguntas(){
             "resposta5": "Comida",
             "resposta6": "Manhoso",
             "opcao"    : "Manhoso"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[The sky is a neighborhood]</b>",
+            "resposta1": "Existe um gato na calçada",
+            "resposta2": "O céu é sua casa",
+            "resposta3": "O céu é azul",
+            "resposta4": "O céu é sua vizinhança",
+            "resposta5": "Existe um cachorro na varanda",
+            "resposta6": "Existe um lagarto na alface",
+            "opcao"    : "O céu é sua vizinhança"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[Yeah, it's alright]</b>",
+            "resposta1": "Sim, não está tudo bem",
+            "resposta2": "Sim, está tudo bem",
+            "resposta3": "Talvez esteja tudo bem",
+            "resposta4": "Water",
+            "resposta5": "Food",
+            "resposta6": "Sim, estamos todos bem",
+            "opcao"    : "Sim, está tudo bem"
+        },
+        {
+            "pergunta": "Tradução a palavra: <b class='complete-me'>[BALL]</b>",
+            "resposta1": "Sorvete",
+            "resposta2": "Maionese",
+            "resposta3": "Malicioso",
+            "resposta4": "Panela",
+            "resposta5": "Bola",
+            "resposta6": "Iogurte",
+            "opcao"    : "Bola"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[One of these days]</b>",
+            "resposta1": "Cachorro",
+            "resposta2": "Um dos dias",
+            "resposta3": "Dias melhores virão",
+            "resposta4": "Dias atrás",
+            "resposta5": "Esses dias estão complicados",
+            "resposta6": "Um destes dias",
+            "opcao"    : "Um destes dias"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[When it comes around, then it's taken away]</b>",
+            "resposta1": "Quando isso chega, e o tiram de mim",
+            "resposta2": "Quando isso chega, e não sai de mim",
+            "resposta3": "Quando isso chega, e o levam embora",
+            "resposta4": "Quando isso chega, então ele vai embora",
+            "resposta5": "Quando isso chega, então e eles vão embora",
+            "resposta6": "Quando isso chega, então elas vão embora",
+            "opcao"    : "Quando isso chega, então ele vai embora"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[It's the same as yesterday]</b>",
+            "resposta1": "É a mesma coisa de semana passada",
+            "resposta2": "É a mesma coisa de ontem a tarde",
+            "resposta3": "É a mesma coisa de ontem",
+            "resposta4": "É a mesma coisa de ontem de manhã",
+            "resposta5": "Sempre é a mesma coisa",
+            "resposta6": "Ontem foi um dia dificil",
+            "opcao"    : "É a mesma coisa de ontem"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[Nothing in this world can take the place of persistence]</b>",
+            "resposta1": "Nada neste mundo pode tomar o lugar da perenigração",
+            "resposta2": "Nada neste mundo pode ser melhor que perenigração",
+            "resposta3": "Nada neste mundo pode tomar o lugar da persistencia",
+            "resposta4": "Nada neste mundo pode tomar o lugar da determinação",
+            "resposta5": "Nada neste mundo pode tomar o lugar do trabalho",
+            "resposta6": "Nada neste mundo é melhor que perenigração",
+            "opcao"    : "Nothing in this world can take the place of persistence"
+        },
+        {
+            "pergunta": "Tradução a frase: <b class='complete-me'>[A man is what he thinks about all day long]</b>",
+            "resposta1": "O homem é o que ele costuma estudar durante todo o dia",
+            "resposta2": "O homem é o que ele costuma praticar durante todo o dia",
+            "resposta3": "O homem é o que ele costuma fazer durante todo o dia",
+            "resposta4": "O homem é o que ele costuma pensar durante todo o dia",
+            "resposta5": "O homem é o que ele costuma a pensar",
+            "resposta6": "O homem é o que ele costuma a sonhar",
+            "opcao"    : "O homem é o que ele costuma pensar durante todo o dia"
         }
     ]
 };
@@ -54,12 +134,20 @@ function startGame(){
         location.reload();
     });
 
+    $("[id^='resposta']").each(function(index, element) {
+                
+        $(element).parent().on("click", function() {
+            finalizeRodada($(element));
+        });
+    });
+
     novaRodada();
 }
 
 function novaRodada(){
 
-    
+    console.log("novarodada");
+
     ajustarInfo();
 
     posicao = Math.floor(Math.random()*$(listaPerguntas).size());
@@ -82,9 +170,7 @@ function novaRodada(){
             $(element).text(listaPerguntas[posicao].resposta6);
         }
 
-        $(element).parent().on("click", function() {
-            finalizeRodada($(element));
-        });
+        
 
     });
 
