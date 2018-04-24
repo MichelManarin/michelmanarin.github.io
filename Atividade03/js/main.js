@@ -1,17 +1,18 @@
 
 var countRodada = 1;
+var countPerguntas = 0;
 var acertadas = 0;
 var erradas = 0;
 var posicao = 0;
-var perguntas = null;
+var listaPerguntas = null;
 var elementsOptions = null;
 
+// Metodo principal
 $(document).ready(function(){
     
     var elementsOptions = $("[id^='resposta']")
     startGame();
     
-
 });
 
 function retornaPerguntas(){
@@ -41,32 +42,35 @@ function retornaPerguntas(){
 }
 
 function startGame(){
-    
-    perguntas = retornaPerguntas().dados;
+        
+    listaPerguntas = retornaPerguntas().dados;
+    countPerguntas = $(listaPerguntas).size();
     novaRodada();
-    FinalizaJogo();
 }
 
 function novaRodada(){
 
-    posicao = Math.floor(Math.random()*$(perguntas).size());
+    
+    ajustarInfo();
+
+    posicao = Math.floor(Math.random()*$(listaPerguntas).size());
 
     $("[id^='resposta']").each(function(index, element) {
                 
-        $(".pergunta").html(perguntas[posicao].pergunta);
+        $(".pergunta").html(listaPerguntas[posicao].pergunta);
 
         if (index == 0){
-            $(element).text(perguntas[posicao].resposta1);
+            $(element).text(listaPerguntas[posicao].resposta1);
         } else if (index == 1){
-            $(element).text(perguntas[posicao].resposta2);
+            $(element).text(listaPerguntas[posicao].resposta2);
         } else if (index == 2){
-            $(element).text(perguntas[posicao].resposta3);
+            $(element).text(listaPerguntas[posicao].resposta3);
         } else if (index == 3){
-            $(element).text(perguntas[posicao].resposta4);
+            $(element).text(listaPerguntas[posicao].resposta4);
         } else if (index == 4){
-            $(element).text(perguntas[posicao].resposta5);
+            $(element).text(listaPerguntas[posicao].resposta5);
         } else if (index == 5){
-            $(element).text(perguntas[posicao].resposta6);
+            $(element).text(listaPerguntas[posicao].resposta6);
         }
 
         $(element).parent().on("click", function() {
@@ -78,13 +82,24 @@ function novaRodada(){
    
 }
 
-function AjustarInfo(){
-    let percentual = ((acertadas + erradas) / acertadas * 100);
-    $("#percentual").text(percentual.toString());
+function ajustarInfo(){
+    $("#questao").text(countPerguntas - ($(listaPerguntas).size()) + 1 + "ª QUESTÃO");
+    $("#respondidas").text(  countPerguntas - ($(listaPerguntas).size()) + "/" + countPerguntas);
 }
 
-function FinalizaJogo(){
+function finalizaGame(){
+    $("#game").css("display","none");    
+    $("#resultado").css("display","block");    
+    $("#acertos").text(acertadas.toString());  
+    $("#erros").text(erradas.toString());  
 
+
+    if (acertadas == 0)
+        $("#aproveitamento").text(0);
+    else {
+        let percentual = (acertadas*100) /(acertadas + erradas);
+        $("#aproveitamento").text(percentual);  
+    }    
 }
 
 function finalizeRodada(element){
@@ -93,17 +108,18 @@ function finalizeRodada(element){
 
     countRodada += 1;
 
-    if ($(element).text() == perguntas[posicao].opcao){
+    if ($(element).text() == listaPerguntas[posicao].opcao){
         acertadas += 1;
     } else {
         erradas += 1;
     }
-    perguntas.splice(posicao, 1);
+    listaPerguntas.splice(posicao, 1);
 
-    AjustarInfo();
+    
+    ajustarInfo();
 
-    if ($(perguntas).size() == 0){
-        return "";
+    if ($(listaPerguntas).size() == 0){
+        finalizaGame();
     } else {
         //alert("novarodada");
         novaRodada();
