@@ -29,16 +29,6 @@ class PessoaController {
         ConexaoBanco.lerPessoas();
 
     }
-
-    deleteRow(){
-
-        var row = row.parentNode.parentNode;
-        row.querySelector("#nomevalue");    
-
-        console.log(i);
-        var table = document.getElementById("table-data");
-  table.deleteRow(i-1);
-    }
     
     setInfoCard(){
         this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
@@ -71,8 +61,7 @@ class PessoaController {
 
         this._listaPessoas.adiciona(this._criaPessoa());
         this._pessoasView.update(this._listaPessoas);
-        this.setInfoCard();
-        this._limpaFormulario();   
+        this.setInfoCard(); 
     }
     
     _criaPessoa() {
@@ -84,7 +73,7 @@ class PessoaController {
             this._inputTelefone.value);    
     }
     
-    _limpaFormulario() {
+    limpaFormulario() {
      
         this._inputNome.value ="";
         this._inputDataNasc.value ="";

@@ -107,6 +107,7 @@ class ConexaoBanco {
         firebase.database().ref().update(updates)
         .then(function() {
             swal("Registro inserido com sucesso.");
+            pessoaController.limpaFormulario();
         })
         .catch(function(error) {
             swal("Erro :" + error.message);
