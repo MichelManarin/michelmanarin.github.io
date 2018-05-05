@@ -106,14 +106,14 @@ class ConexaoBanco {
 
     static write(data,node) {
 
-        /*if (this.isLogged == false)
-            // lançar execação
+        if (this.isLogged == false)
+            throw new error("Não está logado");
 
         if (typeof(node) == "string")
-            // lançar execação
+            throw new error("Esperado uma string");
         
         if (typeof(data) == "object")
-            // lançar execação*/
+        throw new error("Esperado um object");
 
         let updates = {};
         let user = getUserLogged();
@@ -142,6 +142,8 @@ class ConexaoBanco {
                     this._controller.showMessage("Não foi possível realizar a inserção/update : \n" + error.message);
                 
             });;
+
+        return key;
     }
 
 

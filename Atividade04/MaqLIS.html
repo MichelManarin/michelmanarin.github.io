@@ -91,8 +91,8 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-                        <h4 class="page-title" id="TITLE-PAGE">Cadastro de pessoa</h4> 
-                        <h5 id="DESCRIPTION-PAGE">Criação de cadastro de pessoas com JS MVC e banco noSQL (Firebase).</h5>
+                        <h4 class="page-title" id="TITLE-PAGE">Cadastro de máquinas</h4> 
+                        <h5 id="DESCRIPTION-PAGE">Criação de lista/cadastro de máquinas com JS MVC e banco noSQL (Firebase).</h5>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-md-4 col-xs-12">
                         <a href="https://github.com/MichelManarin/michelmanarin.github.io/tree/master/Atividade02" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Acessar GIT
@@ -100,139 +100,11 @@
                         </a>
                         <ol class="breadcrumb">
                             <li><a href="../portfolio.html">Ínicio</a></li>
-                            <li class="active">Cadastro de pessoa</li>
+                            <li class="active">Cadastro de máquinas</li>
                         </ol>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Total de pessoas</h3>
-                            <ul class="list-inline two-part">
-                                <li><i class="icon-people text-purple"></i></li>
-                                <li class="text-right"><span id="cardcontadorpessoas" class="counter">12</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Média de idade</h3>
-                            <ul class="list-inline two-part">
-                                <li><i class="icon-calculator text-danger"></i></li>
-                                <li class="text-right"><span id="cardmediaidade" class="counter">29.00</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                        <div class="col-sm-12">
-                            <div class="white-box">
-                                <h3 class="box-title">Pessoas</h3>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>E-mail</th>
-                                                <th>Data nascimento</th>
-                                                <th>Telefone</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="table-data">
-                                            
-                                                <tr>
-                                                    <td id="nomevalue">Michel</td>
-                                                    <td>michelmanarin@gmail.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>48999402244</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">Alessandra</td>
-                                                    <td>Alessandra@gmail.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>48999402244</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">askisa</td>
-                                                    <td>assa@gmail.com</td>
-                                                    <td>10/8/1993</td>
-                                                    <td>5848515516</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">Mari claudia</td>
-                                                    <td>mariclaudia@gmail.com</td>
-                                                    <td>10/10/1973</td>
-                                                    <td>48545641545</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">alessandra cheirosa</td>
-                                                    <td>michel55@gmail.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>545158</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">Paulo</td>
-                                                    <td>Paulo@gmail.com</td>
-                                                    <td>20/8/1937</td>
-                                                    <td>494649844</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">ssaassa</td>
-                                                    <td>asas@gmail.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>4899402244</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">adda@admin</td>
-                                                    <td>adda@admin.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>56454449419</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">sasasa</td>
-                                                    <td>sasasa@assasa.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>85484</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">Michel</td>
-                                                    <td>assa@gmail.com</td>
-                                                    <td>1/1/1997</td>
-                                                    <td>(48) 99940-2244</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">ssasa@assasa</td>
-                                                    <td>saas@gmail.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>(48) 52652-6526</td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="nomevalue">sasasa</td>
-                                                    <td>asassa@assamsa.com</td>
-                                                    <td>10/8/1996</td>
-                                                    <td>(48) 54654-1564</td>
-                                                </tr>          
-                                            <!--<tr>
-                                                 <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>admin</td>
-                                                <td>
-                                                    <i class="fa fa-trash-o iconremove"></i>
-                                                </td>
-                                            </tr>
-                                            -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                <div id="maquinaView"></div>
             </div>
         </div>
 
@@ -261,15 +133,16 @@
 
     <script src="../js/app/databasev2.js"></script>
     <script src="js/app/views/View.js"></script>
-    <script src="js/app/views/MaquinasView.js"></script>
+    <script src="js/app/views/MaquinasListaView.js"></script>
     <script src="js/app/models/ListaMaquinas.js"></script>
     <script src="js/app/models/Maquina.js"></script>
-    <script src="js/app/controllers/MaquinaController.js"></script>
+    <script src="js/app/controllers/MaquinasListaController.js"></script>
     
     <script src="js/app/helpers/DateHelper.js"></script>
     <script>   
         var conexaoBanco = new ConexaoBanco(true);
-        var maquinaController = new MaquinaController();          
+        var maquinasListaController = new MaquinasListaController();          
+        conexaoBanco.associationController(maquinasListaController);
     </script>
 
 </body>

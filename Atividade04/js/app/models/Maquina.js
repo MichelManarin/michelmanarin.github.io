@@ -1,46 +1,72 @@
-class Pessoa {
+class Maquina {
     
-    constructor(nome, nascimento, email, telefone) {
+    constructor(nome, descricao, handlepessoa, tipo, datafabricacao , marca, hash) {
         
-        if ((typeof(nascimento)) == 'string'){
-             nascimento = DateHelper.textoParaData(nascimento);
+        if (ConexaoBanco.isLogged() == false) 
+            throw new error("Não está logado");
+        
+        if ((typeof(datainclusao)) == 'string'){
+            datainclusao = DateHelper.textoParaData(datainclusao);
         }
 
-        this._nome     = nome;
-        this._datanasc = new Date(nascimento.getTime());
-        this._email    = email;
-        this._telefone = telefone;
-        this._ativo    =  true;
+        if ((typeof(datafabricacao)) == 'string'){
+            datafabricacao = DateHelper.textoParaData(datafabricacao);
+        }
 
-        ConexaoBanco.writeData(this._nome, this._datanasc, this._email, this._telefone);
+        this._nome = nome;
+        this._tipo = tipo;
+        this._descricao = descricao;
+        this._pessoa = handlepessoa;
+        this._datafabricacao = datafabricacao;
+        this._datainclusao = new Date().getTime();
+        this._marca = marca;
+        this._ativo = true;
 
+        if (hash == null){
+            hash = ConexaoBanco.write({nome: nome, descricao: descricao, pessoa: pessoa,
+                                       datafabricacao: datafabricacao, datainclusao: datainclusao,
+                                       marca: marca, ativo: ativo}, node);    
+        }
 
-        //impedir que os atributos do modelo sejam alterados 
+        this._hash = hash;
+
         Object.freeze(this);
     }
     
-    // metodos get
-        get nome() {        
-            return this._nome;
-        }
-        
-        get datanasc() {
-            // retornar um novo objeto de data para 
-            // proteger as propriedades do objeto na camada de apresentação
-            return new Date(this._datanasc.getTime());
-        }
-        
-        get email() {
-            return this._email;
-        }
-        
-        get telefone() {
-            
-            return this._telefone;
-        }
+    get nome() {        
+        return this._nome;
+    }
 
-         get ativo() {
-            
-            return this._ativo;
-        }
+    get tipo() {        
+        return this._tipo;
+    }
+
+    get descricao() {        
+        return this._descricao;
+    }
+
+    get pessoa(){
+        return this._pessoa;
+    }
+
+    get pessoa(){
+        return this._pessoa;
+    }
+
+    get datafabricacao(){
+        return new Date(this._datafabricacao.getTime());
+    }
+
+    get datainclusao(){
+        return new Date(this._datainclusao.getTime());
+    }
+
+    get marca(){
+        return this._marca;
+    }
+
+    get ativo(){
+        return this._ativo;
+    }
+
 }

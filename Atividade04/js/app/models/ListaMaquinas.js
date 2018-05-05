@@ -1,20 +1,15 @@
-class ListaCargos{
+class ListaMaquinas{
     
     constructor() {
         
-        this._pessoas = [];
+        this._maquinas = [];
     }
     
-    adiciona(pessoa) {
+    adiciona(maquina) {
         
-        this._pessoas.push(pessoa);
+        this._maquinas.push(maquina);
     }
     
-    get negociacoes() {
-        
-        return [].concat(this._pessoas);
-    }
-
     getCount(){
         return this._pessoas.length;
     }

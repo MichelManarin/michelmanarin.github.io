@@ -1,33 +1,23 @@
-class PessoaController {
+class MaquinasListaController {
     
     constructor() {
+
+        this._inputNome   = $('#fieldnome');
+        this._inputDesc   = $('#fieldtipo');
+        this._inputAtivo  = $('#fieldativo');
+        this._inputhash   = $('#fieldhash');
+        this._showLoading = $('#loading');
+
+        this._listaMaquinas = new ListaMaquinas();
+        this._maquinasView  = new MaquinasListaView($('#maquinaView'));
+        this._maquinasView.update(this._listaMaquinas);
+
         
-        // Transforma document.getElemetByID em $
-        let $ = document.querySelector.bind(document);
+        $( this._showLoading ).css({ 'display' : 'none' });
 
-        // Criação dos campos da classe que fazem ligação com os inputs
-        this._inputNome     = $('#camponome');
-        this._inputDataNasc = $('#campodata');
-        this._inputEmail    = $('#campoemail');
-        this._inputTelefone = $('#campotelefone');
+    }
 
-        this._cardContadorPessoas = $('#cardcontadorpessoas');
-        this._cardNovasPessoas    = $('#cardnovaspessoas');
-        this._cardMediaIdade      = $('#cardmediaidade');
-
-        this._loading = $('#loading');
-        
-
-        // Instancia collection de pessoas
-        this._listaPessoas = new ListaPessoas();
-
-        // Atualizar view
-        this._pessoasView  = new PessoasView($('#pessoasView'));
-
-        this._pessoasView.update(this._listaPessoas);
-        
-        ConexaoBanco.lerPessoas();
-
+    afterRead(){
     }
     
     setInfoCard(){
