@@ -1,9 +1,9 @@
 class ConexaoBanco {
 
-    constructor(controller, controlMessage) {
+    constructor(controlMessage) {
          
         this._controlMessage = controlMessage;
-        this._controller = controller; 
+        this._controller = null; 
         this._config     =  {
                                 apiKey: "AIzaSyAmehj9iT3_km2s7mYClNtkxN1PMAPEA14",
                                 authDomain: "portfolio-599af.firebaseapp.com",
@@ -15,6 +15,10 @@ class ConexaoBanco {
 
         firebase.initializeApp(this._config); 
     }
+
+    associationController(controller){
+        this._controller = controller;    
+    };
 
       /////////////////////////////////////////
      /////* [AUTHENTIFICATION METHODS] *//////
@@ -102,14 +106,14 @@ class ConexaoBanco {
 
     static write(data,node) {
 
-        if (this.isLogged == false)
+        /*if (this.isLogged == false)
             // lançar execação
 
         if (typeof(node) == "string")
             // lançar execação
         
         if (typeof(data) == "object")
-            // lançar execação
+            // lançar execação*/
 
         let updates = {};
         let user = getUserLogged();

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Carregando página</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+
+     <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <!-- animation CSS -->
+    <link href="../css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="../css/colors/default.css" id="theme" rel="stylesheet">
+
+    <link href="../css/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
+
+    <!-- Firebase e APP.js -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div id="loading" class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="../portfolio.html">
+                        <!-- Logo icon image, you can use font-icon also --><b>
+                        <!--This is dark logo icon--><img src="../plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="../plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                     </b>
+                        <!-- Logo text image you can use text also --><span class="hidden-xs">
+                        <!--This is dark logo text--><img src="../plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="../plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
+                     </span> </a>
+                </div>
+                <!-- /Logo -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li><a href="../portfolio.html">Atividades</a></li>
+                    <li><a>Resumo</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+                        <h4 class="page-title" id="TITLE-PAGE">Cadastro de pessoa</h4> 
+                        <h5 id="DESCRIPTION-PAGE">Criação de cadastro de pessoas com JS MVC e banco noSQL (Firebase).</h5>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-md-4 col-xs-12">
+                        <a href="https://github.com/MichelManarin/michelmanarin.github.io/tree/master/Atividade02" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Acessar GIT
+
+                        </a>
+                        <ol class="breadcrumb">
+                            <li><a href="../portfolio.html">Ínicio</a></li>
+                            <li class="active">Cadastro de pessoa</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Total de pessoas</h3>
+                            <ul class="list-inline two-part">
+                                <li><i class="icon-people text-purple"></i></li>
+                                <li class="text-right"><span id="cardcontadorpessoas" class="counter">12</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Média de idade</h3>
+                            <ul class="list-inline two-part">
+                                <li><i class="icon-calculator text-danger"></i></li>
+                                <li class="text-right"><span id="cardmediaidade" class="counter">29.00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-sm-12">
+                            <div class="white-box">
+                                <h3 class="box-title">Pessoas</h3>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>E-mail</th>
+                                                <th>Data nascimento</th>
+                                                <th>Telefone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-data">
+                                            
+                                                <tr>
+                                                    <td id="nomevalue">Michel</td>
+                                                    <td>michelmanarin@gmail.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>48999402244</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">Alessandra</td>
+                                                    <td>Alessandra@gmail.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>48999402244</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">askisa</td>
+                                                    <td>assa@gmail.com</td>
+                                                    <td>10/8/1993</td>
+                                                    <td>5848515516</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">Mari claudia</td>
+                                                    <td>mariclaudia@gmail.com</td>
+                                                    <td>10/10/1973</td>
+                                                    <td>48545641545</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">alessandra cheirosa</td>
+                                                    <td>michel55@gmail.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>545158</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">Paulo</td>
+                                                    <td>Paulo@gmail.com</td>
+                                                    <td>20/8/1937</td>
+                                                    <td>494649844</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">ssaassa</td>
+                                                    <td>asas@gmail.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>4899402244</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">adda@admin</td>
+                                                    <td>adda@admin.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>56454449419</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">sasasa</td>
+                                                    <td>sasasa@assasa.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>85484</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">Michel</td>
+                                                    <td>assa@gmail.com</td>
+                                                    <td>1/1/1997</td>
+                                                    <td>(48) 99940-2244</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">ssasa@assasa</td>
+                                                    <td>saas@gmail.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>(48) 52652-6526</td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="nomevalue">sasasa</td>
+                                                    <td>asassa@assamsa.com</td>
+                                                    <td>10/8/1996</td>
+                                                    <td>(48) 54654-1564</td>
+                                                </tr>          
+                                            <!--<tr>
+                                                 <td>1</td>
+                                                <td>Deshmukh</td>
+                                                <td>Prohaska</td>
+                                                <td>@Genelia</td>
+                                                <td>admin</td>
+                                                <td>
+                                                    <i class="fa fa-trash-o iconremove"></i>
+                                                </td>
+                                            </tr>
+                                            -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+
+         <!-- /.row -->
+        
+    <!-- /#page-wrapper -->
+        <footer class="footer text-center">FrameWork Ample Admin disponibilizado pela Wrappixel.com - Portfólio Michel Manarin</footer>
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="../js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="../js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/custom.js"></script>
+
+    <script src="../js/mask.js"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="../js/app/databasev2.js"></script>
+    <script src="js/app/views/View.js"></script>
+    <script src="js/app/views/MaquinasView.js"></script>
+    <script src="js/app/models/ListaMaquinas.js"></script>
+    <script src="js/app/models/Maquina.js"></script>
+    <script src="js/app/controllers/MaquinaController.js"></script>
+    
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script>   
+        var conexaoBanco = new ConexaoBanco(true);
+        var maquinaController = new MaquinaController();          
+    </script>
+
+</body>
+
+</html>

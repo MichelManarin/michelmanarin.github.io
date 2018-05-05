@@ -3256,6 +3256,18 @@ ul.common li a:hover {
     color: #98a6ad
 }
 
+.label-tabs {
+    padding-left: 0px;
+}
+
+.form-group-tabs{
+    padding-top: 5px;
+}
+
+.tab-content{
+    margin: 10px;
+}
+
 .sales-report {
     background: #f7fafc;
     margin: 12px -25px;
