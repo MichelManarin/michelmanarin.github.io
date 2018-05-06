@@ -46,7 +46,8 @@ class MaquinasListaView extends View {
                                         <tbody id="table-data">
                                         ${model._maquinas.map(m => `
                                             <tr>
-                                                <td id="nomevalue">${m.nome}</td>
+                                                <td>${m.hash}</td>
+                                                <td>${m.nome}</td>
                                                 <td>${m.tipo}</td>
                                                 <td>${m.status}</td>
                                             </tr>`).join('')}  
@@ -54,6 +55,9 @@ class MaquinasListaView extends View {
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-lg-1 col-sm-2 col-xs-3">
+                            <button class="btn btn-block btn-info">Novo</button>
                         </div>
                     </div>
                 `;

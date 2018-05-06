@@ -2,22 +2,23 @@ class MaquinasListaController {
     
     constructor() {
 
-        this._inputNome   = $('#fieldnome');
-        this._inputDesc   = $('#fieldtipo');
-        this._inputAtivo  = $('#fieldativo');
-        this._inputhash   = $('#fieldhash');
-        this._showLoading = $('#loading');
+        
+        $( this._loading ).css({ 'display' : 'block' });
 
+        this._loading = $('#loading');
         this._listaMaquinas = new ListaMaquinas();
         this._maquinasView  = new MaquinasListaView($('#maquinaView'));
         this._maquinasView.update(this._listaMaquinas);
-
         
-        $( this._showLoading ).css({ 'display' : 'none' });
+        
+        $( this._loading ).css({ 'display' : 'none' });
+
+        // retirar
 
     }
 
     afterRead(){
+        $( this._showLoading ).css({ 'display' : 'none' });
     }
     
     setInfoCard(){

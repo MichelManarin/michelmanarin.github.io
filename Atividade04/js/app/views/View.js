@@ -10,7 +10,6 @@ class View {
 
 
     update(model) {
-        
-        this._elemento.innerText = this._template(model);
+        this._elemento[0].innerHTML = this._template(model);
     }
 }

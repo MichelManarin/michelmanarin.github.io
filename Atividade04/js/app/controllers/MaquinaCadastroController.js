@@ -7,9 +7,11 @@ class MaquinaController {
         this._inputAtivo  = $('#campoativo');
         this._showLoading = $('#loading');
 
-        this._listaCargos = new ListaCargos();
-        this._cargosView  = new MaquinasView($('#maquinasView'));
-        this._cargosView.update(this._listaCargos);
+        this._loading = $('#loading');
+        this._listaMaquinas = new ListaMaquinas();
+        this._maquinasView  = new MaquinasCadastroView($('#maquinaView'));
+        this._maquinasView.update(this._listaMaquinas);
+        
 
         //$( this._showLoading ).css({ 'opacity' : '0.85', 'display' : '' });
         $( this._showLoading ).css({ 'display' : 'none' });

@@ -156,6 +156,7 @@ function integration(){
 
 	xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
 
+	
 	xhr.addEventListener("load", function(){
 
 		if (xhr.status == 200){
