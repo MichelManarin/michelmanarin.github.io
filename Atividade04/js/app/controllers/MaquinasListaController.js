@@ -8,7 +8,7 @@ class MaquinasListaController {
     }
 
 
-    afterRead(){
+    afterRead(pessoas){
         
         this.updateCard();
         $('#loading').css({'display':'none'});

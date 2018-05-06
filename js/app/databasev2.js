@@ -149,21 +149,20 @@ class ConexaoBanco {
 
     static read(node){
 
-        if (typeof(node) == "string")
+        if (typeof(node) != "string")
             throw new error("Esperado string ");
 
         firebase.auth().onAuthStateChanged(function(user) {
-
             if (user) {
 
                 var obj = firebase.database().ref(user + '/' + node);
 
                 obj.once('value', function(snapshot) {
-                    
+
                     var pessoas = snapshot.val();
 
                     if (pessoas != null)
-                        this._controller.afterRead();
+                        this._controller.afterRead(pessoas);
                 });
           
             } else {

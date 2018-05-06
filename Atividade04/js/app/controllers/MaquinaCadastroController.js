@@ -23,7 +23,7 @@ class MaquinaController {
 
     }
 
-    afterRead(){
+    afterRead(pessoas){
         $( this._showLoading ).css({ 'display' : 'none' });
     }
     
