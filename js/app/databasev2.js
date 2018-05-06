@@ -149,12 +149,8 @@ class ConexaoBanco {
 
     static read(node){
 
-        if (this.isLogged() == false)
-            throw new error("Sem login");
-
         if (typeof(node) == "string")
             throw new error("Esperado string ");
-
 
         firebase.auth().onAuthStateChanged(function(user) {
 
