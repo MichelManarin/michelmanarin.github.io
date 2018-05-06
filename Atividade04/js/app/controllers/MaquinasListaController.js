@@ -8,9 +8,15 @@ class MaquinasListaController {
     }
 
 
-    afterRead(pessoas){
-        
+    afterRead(maquinas){
+
+        for (var maquina in maquinas){
+            var obj = maquinas[maquina];
+            this._listaPessoas.adiciona(obj);
+        } ;
+
         this.updateCard();
+        this._pessoasView.update(this._listaPessoas);
         $('#loading').css({'display':'none'});
     }
     
@@ -23,19 +29,6 @@ class MaquinasListaController {
     buscarDadosBD(){
         this._loading.removeAttribute("style");
         ConexaoBanco.lerPessoas();
-    }
-
-    carregar(pessoas){
-
-        for (var pessoa in pessoas){
-            var obj = pessoas[pessoa];
-            obj.datanasc = new Date(obj.datanasc);
-            this._listaPessoas.adiciona(obj);
-        } ;
-
-        this._pessoasView.update(this._listaPessoas);
-        this._loading.style.width='display:none';
-
     }
 
 
