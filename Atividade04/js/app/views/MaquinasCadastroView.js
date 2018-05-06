@@ -27,10 +27,10 @@ class MaquinasCadastroView extends View {
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                        <form id="formulario" onsubmit="pessoaController.adiciona(event)" class="form-horizontal form-material">
+                        <form id="formulario" onsubmit="maquinaController.adiciona(event)" class="form-horizontal form-material">
                             <div class="form-group">
                                 <div class="col-md-10">
-                                    <label for="example-email" class="col-md-12 label-tabs">Nome</label>
+                                    <label for="nome" class="col-md-12 label-tabs">Nome</label>
                                     <input name="nome" required="" id="camponome" type="text" placeholder="Nome da máquina" class="form-control form-control-line"> 
                                 </div>
                                 <div class="col-md-2">

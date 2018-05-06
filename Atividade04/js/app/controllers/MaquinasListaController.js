@@ -1,29 +1,22 @@
 class MaquinasListaController {
     
     constructor() {
-
-        
-        $( this._loading ).css({ 'display' : 'block' });
-
-        this._loading = $('#loading');
         this._listaMaquinas = new ListaMaquinas();
         this._maquinasView  = new MaquinasListaView($('#maquinaView'));
         this._maquinasView.update(this._listaMaquinas);
-        
-        
-        $( this._loading ).css({ 'display' : 'none' });
-
-        // retirar
-
+        ConexaoBanco.read('Maquinas');
     }
+
 
     afterRead(){
-        $( this._showLoading ).css({ 'display' : 'none' });
+        
+        this.updateCard();
+        $('#loading').css({'display':'none'});
     }
     
-    setInfoCard(){
-        this._cardContadorPessoas.textContent = this._listaPessoas.getCount();
-        this._cardMediaIdade.textContent = (this._listaPessoas.getAverage()).toFixed(2);
+    updateCard(){
+        this._cardContadorPessoas.textContent = 0;
+        this._cardMediaIdade.textContent = 0;
     }
     
 

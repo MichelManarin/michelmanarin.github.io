@@ -2,20 +2,24 @@ class MaquinaController {
     
     constructor() {
 
-        this._inputNome   = $('#camponome');
-        this._inputDesc   = $('#campodescricao');
-        this._inputAtivo  = $('#campoativo');
-        this._showLoading = $('#loading');
+
+        this._inputNome       = $('#camponome');
+        this._inputStatus     = $('#campostatus');
+        this._inputMarca      = $('#campomarca');
+        this._inputInclusao   = $('#campoinclusao');
+        this._inputDescricao  = $('#campodescricao');
+        this._inputFabricacao = $('#campofabricacao');
 
         this._loading = $('#loading');
+
+        
+        
+        $( this._loading ).css({ 'display' : 'none' });
+
         this._listaMaquinas = new ListaMaquinas();
         this._maquinasView  = new MaquinasCadastroView($('#maquinaView'));
         this._maquinasView.update(this._listaMaquinas);
         
-
-        //$( this._showLoading ).css({ 'opacity' : '0.85', 'display' : '' });
-        $( this._showLoading ).css({ 'display' : 'none' });
-        ConexaoBanco.read("cargos");
 
     }
 

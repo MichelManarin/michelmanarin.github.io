@@ -149,11 +149,11 @@ class ConexaoBanco {
 
     static read(node){
 
-        if (this.isLogged == false)
-            // lançar execação
+        if (this.isLogged() == false)
+            throw new error("Sem login");
 
         if (typeof(node) == "string")
-            // lançar execação
+            throw new error("Esperado string ");
 
 
         firebase.auth().onAuthStateChanged(function(user) {
@@ -167,10 +167,7 @@ class ConexaoBanco {
                     var pessoas = snapshot.val();
 
                     if (pessoas != null)
-                    {
-                        this._controller.loadRegister(pessoas);
-                        this._controller.updateCard();
-                    }
+                        this._controller.afterRead();
                 });
           
             } else {
