@@ -10,7 +10,7 @@ class ProjectController{
     add(e) {
         
         e.preventDefault();
-        let postdata = { name: name, description: description };
+        let postdata = { name: this._inputName.value, description: this._inputDescription.value };
         ConexaoBanco.write(postdata,"Projects" );
     }
     
