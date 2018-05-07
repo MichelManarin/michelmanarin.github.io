@@ -1,0 +1,18 @@
+.bg{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: url(bg.jpg) center center/cover no-repeat!important;
+}
+
+.description{
+    margin-top: 12%;
+    margin-left: 5%;
+    color: black;
+    position: absolute;
+}
+
+.modal-content {
+    border-radius: 5px!important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
