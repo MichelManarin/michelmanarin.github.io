@@ -112,7 +112,7 @@ class ConexaoBanco {
         if (typeof(node) != "string")
             throw new Error("Esperado uma string");
         
-        if (typeof(data) == "object")
+        if (typeof(data) != "object")
         throw new Error("Esperado um object");
 
         let updates = {};
