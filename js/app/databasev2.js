@@ -107,13 +107,13 @@ class ConexaoBanco {
     static write(data,node) {
 
         if (this.isLogged == false)
-            throw new error("Não está logado");
+            throw new Error("Não está logado");
 
-        if (typeof(node) == "string")
-            throw new error("Esperado uma string");
+        if (typeof(node) != "string")
+            throw new Error("Esperado uma string");
         
         if (typeof(data) == "object")
-        throw new error("Esperado um object");
+        throw new Error("Esperado um object");
 
         let updates = {};
         let user = getUserLogged();
