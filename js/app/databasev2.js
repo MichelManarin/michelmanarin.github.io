@@ -116,7 +116,7 @@ class ConexaoBanco {
         throw new Error("Esperado um object");
 
         let updates = {};
-        let user = getUserLogged();
+        let user = this.getUserLogged();
         let key  = firebase.database().ref().child(node).push().key;
         
         updates[user + '/' + node + '/' + key] = data;
