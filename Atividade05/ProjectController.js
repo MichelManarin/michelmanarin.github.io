@@ -2,8 +2,8 @@ class ProjectController{
     
     constructor() {
 
-        this._inputName        = $('#name-project');
-        this._inputDescription = $('#description-project');
+        this._inputName        = $('#nameproject');
+        this._inputDescription = $('#descriptionproject');
 
     }
         

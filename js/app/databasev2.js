@@ -119,7 +119,7 @@ class ConexaoBanco {
         let user = this.getUserLogged();
         let key  = firebase.database().ref().child(node).push().key;
         
-        updates[user + '/' + node + '/' + key] = data;
+        updates[user.uid + '/' + node + '/' + key] = data;
     
         firebase.database().ref().update(updates)
             
