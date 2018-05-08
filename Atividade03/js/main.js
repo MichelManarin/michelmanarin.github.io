@@ -28,7 +28,7 @@ function retornaPerguntas(){
             "opcao"    :  "Wednesday"
         },
         {
-            "pergunta": "Tradução a palavra: <b class='complete-me'>[SLY]</b>",
+            "pergunta": "Traduza a palavra: <b class='complete-me'>[SLY]</b>",
             "resposta1": "Preguiçoso",
             "resposta2": "Esperto",
             "resposta3": "Malicioso",
@@ -38,7 +38,7 @@ function retornaPerguntas(){
             "opcao"    : "Manhoso"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[The sky is a neighborhood]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[The sky is a neighborhood]</b>",
             "resposta1": "Existe um gato na calçada",
             "resposta2": "O céu é sua casa",
             "resposta3": "O céu é azul",
@@ -48,7 +48,7 @@ function retornaPerguntas(){
             "opcao"    : "O céu é sua vizinhança"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[Yeah, it's alright]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[Yeah, it's alright]</b>",
             "resposta1": "Sim, não está tudo bem",
             "resposta2": "Sim, está tudo bem",
             "resposta3": "Talvez esteja tudo bem",
@@ -58,7 +58,7 @@ function retornaPerguntas(){
             "opcao"    : "Sim, está tudo bem"
         },
         {
-            "pergunta": "Tradução a palavra: <b class='complete-me'>[BALL]</b>",
+            "pergunta": "Traduza a palavra: <b class='complete-me'>[BALL]</b>",
             "resposta1": "Sorvete",
             "resposta2": "Maionese",
             "resposta3": "Malicioso",
@@ -68,7 +68,7 @@ function retornaPerguntas(){
             "opcao"    : "Bola"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[One of these days]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[One of these days]</b>",
             "resposta1": "Cachorro",
             "resposta2": "Um dos dias",
             "resposta3": "Dias melhores virão",
@@ -78,7 +78,7 @@ function retornaPerguntas(){
             "opcao"    : "Um destes dias"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[When it comes around, then it's taken away]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[When it comes around, then it's taken away]</b>",
             "resposta1": "Quando isso chega, e o tiram de mim",
             "resposta2": "Quando isso chega, e não sai de mim",
             "resposta3": "Quando isso chega, e o levam embora",
@@ -88,7 +88,7 @@ function retornaPerguntas(){
             "opcao"    : "Quando isso chega, então ele vai embora"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[It's the same as yesterday]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[It's the same as yesterday]</b>",
             "resposta1": "É a mesma coisa de semana passada",
             "resposta2": "É a mesma coisa de ontem a tarde",
             "resposta3": "É a mesma coisa de ontem",
@@ -98,7 +98,7 @@ function retornaPerguntas(){
             "opcao"    : "É a mesma coisa de ontem"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[Nothing in this world can take the place of persistence]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[Nothing in this world can take the place of persistence]</b>",
             "resposta1": "Nada neste mundo pode tomar o lugar da perenigração",
             "resposta2": "Nada neste mundo pode ser melhor que perenigração",
             "resposta3": "Nada neste mundo pode tomar o lugar da persistencia",
@@ -108,7 +108,7 @@ function retornaPerguntas(){
             "opcao"    : "Nothing in this world can take the place of persistence"
         },
         {
-            "pergunta": "Tradução a frase: <b class='complete-me'>[A man is what he thinks about all day long]</b>",
+            "pergunta": "Traduza a frase: <b class='complete-me'>[A man is what he thinks about all day long]</b>",
             "resposta1": "O homem é o que ele costuma estudar durante todo o dia",
             "resposta2": "O homem é o que ele costuma praticar durante todo o dia",
             "resposta3": "O homem é o que ele costuma fazer durante todo o dia",
