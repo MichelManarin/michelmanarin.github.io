@@ -29,7 +29,7 @@ class LoginController {
         }
 
 
-        createUser(this._email.value,this._senha.value);
+        ConexaoBanco.createUser(this._email.value,this._senha.value);
     }
 
     changeRegister(event){
